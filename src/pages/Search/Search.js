@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Container } from "react-bootstrap";
 
 import MainNavBar from "../../components/MainNavBar/MainNavBar";
@@ -11,6 +11,8 @@ import Footer from "../../components/Footer/Footer";
 
 function Search({ history, ...props }) {
   const { match } = props;
+  const listScroll = useRef(null);
+  const scrollToRefObject = (ref) => window.scrollTo(0, ref.current?.offsetTop);
 
   const [loading, setLoading] = useState(false);
   const [listMovie, setListMovie] = useState([]);
@@ -27,6 +29,7 @@ function Search({ history, ...props }) {
 
   useEffect(() => {
     function LoadMovies() {
+      scrollToRefObject(listScroll);
       setLoading(true);
       api
         .get(`/search/${type}`, {
@@ -55,7 +58,7 @@ function Search({ history, ...props }) {
   }, [type, currentPage, match]);
 
   return (
-    <div>
+    <div ref={listScroll}>
       <MainNavBar
         history={history}
         query={match.params.query}
@@ -71,7 +74,7 @@ function Search({ history, ...props }) {
         />
 
         <div className="mt-5 d-flex flex-wrap">
-          {loading && <LoadingCard qtd={10} />}
+          {loading && <LoadingCard qtd={8} />}
 
           {!loading && listMovie.length == 0 && (
             <div className="container-empty">

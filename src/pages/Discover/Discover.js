@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Col, Container, Form } from "react-bootstrap";
 import Select from "react-select";
 
@@ -15,6 +15,9 @@ import "moment/locale/pt-br";
 moment.locale("pt-br");
 
 function Discover({ history }) {
+  const listScroll = useRef(null);
+  const scrollToRefObject = (ref) => window.scrollTo(0, ref.current?.offsetTop);
+
   const [type, setType] = useState("movie");
   const [year, setYear] = useState({
     label: moment().format("YYYY"),
@@ -38,6 +41,7 @@ function Discover({ history }) {
 
   useEffect(() => {
     function LoadMovies() {
+      scrollToRefObject(listScroll);
       setLoading(true);
       api
         .get(`/discover/${type}`, {
@@ -60,20 +64,18 @@ function Discover({ history }) {
         .catch((error) => {
           console.log("LoadMovies error " + error);
         })
-        .finally(() => setLoading(false));
+        .finally(() => {
+          setTimeout(() => {
+            setLoading(false);
+          }, 500);
+        });
     }
 
     LoadMovies();
   }, [type, year, sort, currentPage]);
 
-  function HandlerType(e, type) {
-    e.stopPropagation();
-    setCurrentPage(1);
-    setType(type);
-  }
-
   return (
-    <div>
+    <div ref={listScroll}>
       <MainNavBar history={history} />
 
       <Container>
@@ -119,7 +121,7 @@ function Discover({ history }) {
         </div>
 
         <div className="mt-5 d-flex flex-wrap">
-          {loading && <LoadingCard qtd={10} />}
+          {loading && <LoadingCard qtd={8} />}
           {!loading && <MainCard list_movie={listMovie} history={history} />}
         </div>
 
