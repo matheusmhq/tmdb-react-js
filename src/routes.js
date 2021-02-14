@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import { createBrowserHistory } from "history";
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Discover from "./pages/Discover/Discover";
 import Search from "./pages/Search/Search";
 import Details from "./pages/Details/Details";
+import Movies from "./pages/Movies/Movies";
+import Tvs from "./pages/Tvs/Tvs";
 
 function Routes() {
   return (
@@ -15,6 +16,8 @@ function Routes() {
             <Route exact path="/" component={Discover} />
             <Route exact path="/search/:query?" component={Search} />
             <Route exact path="/details/:type?/:id?" component={Details} />
+            <Route exact path="/Movies" component={Movies} />
+            <Route exact path="/Tvs" component={Tvs} />
           </Switch>
         </main>
       </BrowserRouter>

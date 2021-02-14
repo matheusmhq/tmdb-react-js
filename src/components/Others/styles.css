@@ -1,0 +1,13 @@
+.social a {
+  color: var(--darkest_gray);
+  margin-right: 22px;
+  font-size: 2em;
+}
+
+.social a:last-child {
+  margin-right: 0;
+}
+
+.social a:hover {
+  color: var(--darkest_gray);
+}

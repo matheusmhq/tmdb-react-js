@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 
+import "./styles.css";
+
 function ChooserType({ ...props }) {
   const { screen, handler_current_page, handler_type, type } = props;
-
   const [obj, setObj] = useState({});
 
   useEffect(() => {
@@ -21,6 +22,22 @@ function ChooserType({ ...props }) {
           Two: "Filmes",
           Three: "Ou",
           Four: "Séries",
+        });
+        break;
+      case "movies":
+        setObj({
+          One: "Encontre filmes",
+          Two: "Populares",
+          Three: "Ou",
+          Four: "Mais votados",
+        });
+        break;
+      case "tvs":
+        setObj({
+          One: "Encontre séries",
+          Two: "Populares",
+          Three: "Ou",
+          Four: "Mais votadas",
         });
         break;
     }

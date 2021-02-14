@@ -40,8 +40,8 @@ function MainNavBar({ ...props }) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/">Descubra</Nav.Link>
-            <Nav.Link href="#">Filmes</Nav.Link>
-            <Nav.Link href="#">Séries</Nav.Link>
+            <Nav.Link href="/movies">Filmes</Nav.Link>
+            <Nav.Link href="/tvs">Séries</Nav.Link>
           </Nav>
           <Form
             inline
@@ -52,7 +52,7 @@ function MainNavBar({ ...props }) {
           >
             <FormControl
               type="text"
-              placeholder="Filmes ou séries"
+              placeholder="Filmes ou Séries"
               className="mr-sm-2"
               onChange={(e) => {
                 setWord(e.currentTarget.value);

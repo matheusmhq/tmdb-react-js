@@ -56,3 +56,47 @@
   border: none;
   color: white;
 }
+
+.panel {
+  /* border: 1px solid red; */
+}
+
+.info {
+  /* border: 1px solid red; */
+}
+
+.info-item {
+  margin-top: 20px;
+}
+
+.info-item h3 {
+  font-size: 22px;
+  color: black;
+  font-weight: bold;
+}
+
+.info-item p {
+  font-size: 18px;
+}
+
+.keyword-tag {
+  background-color: var(--light_gray);
+  color: var(--darker_gray);
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+.details-about {
+  margin: 24px auto 0;
+}
+
+.btn-show-cast {
+  background-color: transparent;
+  border: none;
+  color: var(--dark_gray);
+}
+
+.btn-show-cast:hover {
+  opacity: 0.6;
+}

@@ -1,22 +1,25 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Container } from "react-bootstrap";
+import { Col, Container, Form } from "react-bootstrap";
+import Select from "react-select";
 
 import MainNavBar from "../../components/MainNavBar/MainNavBar";
 import LoadingCard from "../../components/Loading/LoadingCard";
 import MainPagination from "../../components/MainPagination/MainPagination";
 import MainCard from "../../components/MainCard/MainCard";
+import Footer from "../../components/Footer/Footer";
 import api from "../../services/api";
 import ChooserType from "../../components/ChooserType/ChooserType";
-import Footer from "../../components/Footer/Footer";
+import moment from "moment";
+import "moment/locale/pt-br";
+moment.locale("pt-br");
 
-function Search({ history, ...props }) {
-  const { match } = props;
+function Tvs({ history }) {
   const listScroll = useRef(null);
   const scrollToRefObject = (ref) => window.scrollTo(0, ref.current?.offsetTop);
 
-  const [loading, setLoading] = useState(false);
-  const [listMovie, setListMovie] = useState([]);
   const [type, setType] = useState("movie");
+  const [listMovie, setListMovie] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   //Pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -24,23 +27,18 @@ function Search({ history, ...props }) {
   const [totalResults, setTotalResults] = useState(null);
 
   useEffect(() => {
-    if (match.params.query == undefined) history.push({ pathname: "/" });
-  }, []);
-
-  useEffect(() => {
-    function LoadMovies() {
+    function LoadTvs() {
       scrollToRefObject(listScroll);
       setLoading(true);
       api
-        .get(`/search/${type}`, {
+        .get(`/tv/${type == "movie" ? "popular" : "top_rated"}`, {
           params: {
             page: currentPage,
-            query: match.params.query,
           },
         })
         .then((response) => {
           if (response.status == 200) {
-            console.log("LoadMovies success");
+            console.log("LoadTvs success");
             console.log(response.data);
 
             setListMovie(response.data.results);
@@ -49,25 +47,25 @@ function Search({ history, ...props }) {
           }
         })
         .catch((error) => {
-          console.log("LoadMovies error " + error);
+          console.log("LoadTvs error " + error);
         })
-        .finally(() => setLoading(false));
+        .finally(() => {
+          setTimeout(() => {
+            setLoading(false);
+          }, 500);
+        });
     }
 
-    LoadMovies();
-  }, [type, currentPage, match]);
+    LoadTvs();
+  }, [type, currentPage]);
 
   return (
     <div ref={listScroll}>
-      <MainNavBar
-        history={history}
-        query={match.params.query}
-        handler_current_page={setCurrentPage}
-      />
+      <MainNavBar history={history} />
 
       <Container fluid>
         <ChooserType
-          screen="search"
+          screen="tvs"
           handler_current_page={setCurrentPage}
           handler_type={setType}
           type={type}
@@ -75,31 +73,20 @@ function Search({ history, ...props }) {
 
         <div className="mt-5 d-flex flex-wrap">
           {loading && <LoadingCard qtd={8} />}
-
-          {!loading && listMovie.length == 0 && (
-            <div className="container-empty">
-              <p>
-                Não foram encontrados resultados que correspondam aos seus
-                critérios de busca.
-              </p>
-            </div>
-          )}
           {!loading && <MainCard list_movie={listMovie} history={history} />}
         </div>
 
-        {listMovie.length > 0 && (
-          <MainPagination
-            handler_current_page={setCurrentPage}
-            current_page={currentPage}
-            total_results={totalResults}
-            last_page={lastPage}
-            loading={loading}
-          />
-        )}
+        <MainPagination
+          handler_current_page={setCurrentPage}
+          current_page={currentPage}
+          total_results={totalResults}
+          last_page={lastPage}
+          loading={loading}
+        />
       </Container>
       <Footer />
     </div>
   );
 }
 
-export default Search;
+export default Tvs;

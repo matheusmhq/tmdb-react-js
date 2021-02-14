@@ -78,7 +78,7 @@ function Discover({ history }) {
     <div ref={listScroll}>
       <MainNavBar history={history} />
 
-      <Container>
+      <Container fluid>
         <ChooserType
           screen="discover"
           handler_current_page={setCurrentPage}

@@ -1,0 +1,39 @@
+.container-type {
+  display: flex;
+}
+
+@media screen and (max-width: 500px) {
+  .container-type p,
+  .container-type a {
+    font-size: 18px;
+  }
+}
+
+.discover-text,
+.movie-text,
+.discover-text,
+.serie-text {
+  color: red;
+  margin-right: 10px;
+  color: var(--darkest_gray);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.movie-text {
+  color: var(--light_blue);
+  cursor: pointer;
+}
+
+.movie-text:hover {
+  color: var(--light_blue);
+}
+
+.serie-text {
+  color: var(--light_green);
+  cursor: pointer;
+}
+
+.serie-text:hover {
+  color: var(--light_green);
+}

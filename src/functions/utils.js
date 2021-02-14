@@ -70,3 +70,50 @@ export function ConvertRuntime(min) {
     return `${h} ${m}`;
   }
 }
+
+export function FormatterDollar(money) {
+  if (money == undefined || money == "" || money == null) return false;
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(money);
+}
+
+export function StatusMovieToBr(status) {
+  switch (status) {
+    case "Released":
+      return "Lançado";
+    case "Post Production":
+      return "Pós-Produção";
+    case "Planned":
+      return "Planejado";
+  }
+}
+
+export function StatusTvToBr(status) {
+  switch (status) {
+    case "Returning Series":
+      return "Renovada";
+    case "Planned":
+      return "Planejado";
+    case "In Production":
+      return "Em produçao";
+    case "Ended":
+      return "Finalizada";
+    case "Cancelad":
+      return "Cancelada";
+    case "Pilot":
+      return "Piloto";
+  }
+}
+
+export function TypeTvToBr(type) {
+  switch (type) {
+    case "Miniseries":
+      return "Minissérie";
+    case "Scripted":
+      return "Roteirizada";
+    case "Reality":
+      return "Reality Show";
+  }
+}

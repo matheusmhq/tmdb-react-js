@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Card } from "react-bootstrap";
 
-import placeholder_image from "../../assets/img/placeholder_image.jpg";
+import placeholder from "../../assets/img/placeholder.jpg";
 import moment from "moment";
 import { GetImage } from "../../functions/utils";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
@@ -11,10 +11,6 @@ import { HexToRgbA } from "../../functions/utils";
 
 function MainCard({ ...props }) {
   const { list_movie, history } = props;
-
-  function GoToDetails(id, type) {
-    history.push({ pathname: `/details/${type}/${id}` });
-  }
 
   return (
     <>
@@ -35,7 +31,7 @@ function MainCard({ ...props }) {
                   src={
                     item.poster_path != null
                       ? GetImage("w500", item.poster_path)
-                      : placeholder_image
+                      : placeholder
                   }
                 />
                 <div className="container-rating">
