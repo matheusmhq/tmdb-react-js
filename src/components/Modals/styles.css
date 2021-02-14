@@ -1,0 +1,13 @@
+.modal .close {
+  color: white;
+}
+
+.modal .close:hover {
+  color: rgb(143, 134, 134);
+}
+
+.modal .modal-header {
+  background-color: black;
+  color: white;
+  border: none;
+}
