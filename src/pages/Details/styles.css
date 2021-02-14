@@ -1,0 +1,58 @@
+.image-bg-top p {
+  margin-bottom: 0 !important;
+}
+
+.details-left {
+}
+
+.details-right {
+  color: white;
+}
+
+.details-title {
+  font-weight: bold;
+}
+
+.details-title span {
+  font-weight: normal;
+}
+
+.details-date {
+  font-size: 18px;
+}
+
+.details-runtime {
+  font-size: 18px;
+}
+
+.container-gender p {
+  font-size: 18px;
+}
+
+@media screen and (min-width: 500px) {
+  .container-gender::before {
+    content: "";
+    display: block;
+    margin: 0 10px;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 999px;
+  }
+
+  .container-gender::after {
+    content: "";
+    display: block;
+    margin: 0 10px;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 999px;
+  }
+}
+
+.btn-trailer {
+  background-color: Transparent;
+  border: none;
+  color: white;
+}

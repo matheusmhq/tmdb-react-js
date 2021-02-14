@@ -1,0 +1,33 @@
+.container-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark_bt);
+}
+
+.container-header nav {
+  width: 1144px;
+}
+
+.container-header .logo {
+  width: 76px;
+}
+
+.button-primary {
+  background: linear-gradient(
+    to right,
+    var(--light_green) 0%,
+    var(--light_blue) 100%
+  );
+  border: none;
+}
+
+.container-header .nav-link {
+  color: white !important;
+}
+
+@media screen and (max-width: 769px) {
+  .container-header .btn-search {
+    width: 100%;
+  }
+}

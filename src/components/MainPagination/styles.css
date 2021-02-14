@@ -1,0 +1,18 @@
+.info-pages {
+  color: var(--darkest_gray);
+  font-weight: bold;
+}
+
+.info-results {
+  color: var(--dark_gray);
+}
+
+.page-item.active .page-link {
+  background-color: var(--light_blue) !important;
+  color: white !important;
+  border: none;
+}
+
+.page-link {
+  color: var(--light_blue) !important;
+}
