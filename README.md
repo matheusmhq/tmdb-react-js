@@ -14,7 +14,7 @@ Um WebApp totalmente responsivo feito com [React](https://pt-br.reactjs.org/), c
 
 # Live
 
-[TMDB ReactJs - Live](https://tmdb-movies.netlify.app/)
+[TMDB ReactJs - Live ◀️](https://tmdb-movies.netlify.app/)
 
 ## Bibliotecas
 
