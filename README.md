@@ -1,4 +1,4 @@
-![Logo TMDB](https://upload.wikimedia.org/wikipedia/commons/6/6e/Tmdb-312x276-logo.png)
+<img align="center" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Tmdb-312x276-logo.png" alt="Logo TMDB" title="Logo TMDB" />
 
 #
 
