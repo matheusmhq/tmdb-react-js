@@ -20,8 +20,10 @@ function ChooserType({ ...props }) {
         setObj({
           One: "Pesquise por",
           Two: "Filmes",
-          Three: "Ou",
+          Three: ",",
           Four: "Séries",
+          Five: "Ou",
+          Six: "Pessoas",
         });
         break;
       case "movies":
@@ -38,6 +40,11 @@ function ChooserType({ ...props }) {
           Two: "Populares",
           Three: "Ou",
           Four: "Mais votadas",
+        });
+        break;
+      case "person":
+        setObj({
+          One: "Pessoas populares",
         });
         break;
     }
@@ -64,6 +71,13 @@ function ChooserType({ ...props }) {
         className={`serie-text ${type == "tv" ? "underline" : ""}`}
       >
         {obj?.Four}
+      </a>
+      <p className="discover-text">{obj?.Five}</p>
+      <a
+        onClick={(e) => HandlerType(e, "person")}
+        className={`serie-text ${type == "person" ? "underline" : ""}`}
+      >
+        {obj?.Six}
       </a>
     </div>
   );

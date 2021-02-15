@@ -5,6 +5,7 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
+import BtnMore from "../../components/Others/BtnMore";
 import MainNavBar from "../../components/MainNavBar/MainNavBar";
 import LoadingDetails from "../../components/Loading/LoadingDetails";
 import CardCast from "../../components/Others/CardCast";
@@ -37,7 +38,7 @@ function Details({ history, ...props }) {
   const [details, setDetails] = useState({});
   const [showTrailer, setShowTrailer] = useState(false);
   const [trailerId, setTrailerId] = useState("");
-  const [showCast, setShowCast] = useState(false);
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     if (match.params.id == undefined || match.params.type == undefined) {
@@ -86,11 +87,11 @@ function Details({ history, ...props }) {
   function RenderYear() {
     if (type == "movie") {
       if (details.release_date != "") {
-        return moment(details.release_date).format("YYYY");
+        return `(${moment(details.release_date).format("YYYY")})`;
       }
     } else {
       if (details.first_air_date != "") {
-        return moment(details.first_air_date).format("YYYY");
+        return `(${moment(details.first_air_date).format("YYYY")})`;
       }
     }
   }
@@ -235,6 +236,12 @@ function Details({ history, ...props }) {
               <Col xs={12} md={4}>
                 <div className="details-left text-center">
                   <img
+                    title={
+                      details.title != undefined ? details.title : details.name
+                    }
+                    alt={
+                      details.title != undefined ? details.title : details.name
+                    }
                     className="img-fluid"
                     src={
                       details.poster_path != null
@@ -311,24 +318,22 @@ function Details({ history, ...props }) {
                   <h3 className="mb-4 text-center text-md-left">
                     Elenco principal
                   </h3>
+                  {details.credits.cast.length == 0 && (
+                    <p className="text-center">Indisponível</p>
+                  )}
                   <div className="d-flex flex-wrap">
                     <CardCast
                       list_cast={details.credits.cast.slice(
                         0,
-                        showCast == true ? 999 : 8
+                        showMore == true ? 999 : 8
                       )}
                     />
                   </div>
-                  {details.credits.cast.length > 8 && (
-                    <div className="text-center">
-                      <button
-                        className="btn-show-cast btn-lg"
-                        onClick={() => setShowCast(!showCast)}
-                      >
-                        ver {showCast == true ? "menos" : "mais"}
-                      </button>
-                    </div>
-                  )}
+                  <BtnMore
+                    qtd={details.credits.cast.length}
+                    handler_show={setShowMore}
+                    show={showMore}
+                  />
                 </div>
               </Col>
 
@@ -350,7 +355,9 @@ function Details({ history, ...props }) {
                   Recomendações
                 </h3>
                 <MainCard
+                  history={history}
                   list_movie={details.recommendations.results.slice(0, 8)}
+                  type={type}
                 />
               </div>
             )}

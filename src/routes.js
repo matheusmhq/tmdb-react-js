@@ -6,6 +6,8 @@ import Search from "./pages/Search/Search";
 import Details from "./pages/Details/Details";
 import Movies from "./pages/Movies/Movies";
 import Tvs from "./pages/Tvs/Tvs";
+import Persons from "./pages/Persons/Persons";
+import Person from "./pages/Persons/Person";
 
 function Routes() {
   return (
@@ -18,6 +20,8 @@ function Routes() {
             <Route exact path="/details/:type?/:id?" component={Details} />
             <Route exact path="/Movies" component={Movies} />
             <Route exact path="/Tvs" component={Tvs} />
+            <Route exact path="/Persons" component={Persons} />
+            <Route exact path="/Person/:id" component={Person} />
           </Switch>
         </main>
       </BrowserRouter>

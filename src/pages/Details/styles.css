@@ -90,13 +90,3 @@
 .details-about {
   margin: 24px auto 0;
 }
-
-.btn-show-cast {
-  background-color: transparent;
-  border: none;
-  color: var(--dark_gray);
-}
-
-.btn-show-cast:hover {
-  opacity: 0.6;
-}

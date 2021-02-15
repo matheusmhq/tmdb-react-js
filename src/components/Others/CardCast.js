@@ -13,7 +13,7 @@ function CardCast({ ...props }) {
         return (
           <Col xs={6} md={4} lg={3} key={item.id}>
             <Card className="mb-3">
-              <a href={`#`} className="position-relative">
+              <a href={`/person/${item.id}`} className="position-relative">
                 <Card.Img
                   title={item.name}
                   alt={item.name}
@@ -26,7 +26,11 @@ function CardCast({ ...props }) {
                 />
               </a>
               <Card.Body>
-                <a href={``} title={item.name} alt={item.name}>
+                <a
+                  href={`/person/${item.id}`}
+                  title={item.name}
+                  alt={item.name}
+                >
                   <Card.Title className="limit_word">{item.name}</Card.Title>
                 </a>
                 <Card.Text className="limit_word_one">

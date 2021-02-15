@@ -11,3 +11,14 @@
 .social a:hover {
   color: var(--darkest_gray);
 }
+
+.btn-show-cast {
+  background-color: transparent;
+  border: none;
+  color: var(--dark_gray);
+  font-size: 16px !important;
+}
+
+.btn-show-cast:hover {
+  opacity: 0.6;
+}

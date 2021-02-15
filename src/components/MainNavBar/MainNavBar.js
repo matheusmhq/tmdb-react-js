@@ -64,6 +64,12 @@ function MainNavBar({ ...props }) {
             <Nav.Link className={`${VerifyActualPage("tvs")}`} href="/tvs">
               Séries
             </Nav.Link>
+            <Nav.Link
+              className={`${VerifyActualPage("persons")}`}
+              href="/persons"
+            >
+              Pessoas
+            </Nav.Link>
           </Nav>
           <Form
             inline

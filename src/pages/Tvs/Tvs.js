@@ -73,7 +73,9 @@ function Tvs({ history }) {
 
         <div className="mt-5 d-flex flex-wrap">
           {loading && <LoadingCard qtd={8} />}
-          {!loading && <MainCard list_movie={listMovie} history={history} />}
+          {!loading && (
+            <MainCard type={"tv"} list_movie={listMovie} history={history} />
+          )}
         </div>
 
         <MainPagination

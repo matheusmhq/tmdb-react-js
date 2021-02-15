@@ -53,6 +53,7 @@ export function GetImage(size, image) {
 }
 
 export function HexToRgbA(hex, opacity) {
+  if (hex == undefined || hex == null) return "";
   const [r, g, b] = hex.match(/\w\w/g).map((x) => parseInt(x, 16));
   return `rgba(${r},${g},${b},${opacity})`;
 }
@@ -125,5 +126,14 @@ export function GetColorRating(rating) {
     return Colors.brand_yellow;
   } else if (rating > 6 && rating <= 10) {
     return Colors.brand_green;
+  }
+}
+
+export function GetDepartmentPerson(department) {
+  switch (department) {
+    case "Acting":
+      return "Atuação";
+    case "Scripted":
+      return "Roteirização";
   }
 }

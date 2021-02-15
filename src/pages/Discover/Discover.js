@@ -136,7 +136,9 @@ function Discover({ history }) {
             </div>
           )}
 
-          {!loading && <MainCard list_movie={listMovie} history={history} />}
+          {!loading && (
+            <MainCard type={type} list_movie={listMovie} history={history} />
+          )}
         </div>
 
         {listMovie.length > 0 && (

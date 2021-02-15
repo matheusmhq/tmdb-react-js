@@ -1,26 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Col, Container, Form } from "react-bootstrap";
-import Select from "react-select";
+import { Container } from "react-bootstrap";
 
 import MainNavBar from "../../components/MainNavBar/MainNavBar";
 import LoadingCard from "../../components/Loading/LoadingCard";
 import MainPagination from "../../components/MainPagination/MainPagination";
-import { GetListYears, GetListSort } from "../../functions/utils";
 import MainCard from "../../components/MainCard/MainCard";
-import Footer from "../../components/Footer/Footer";
 import api from "../../services/api";
 import ChooserType from "../../components/ChooserType/ChooserType";
-import moment from "moment";
-import "moment/locale/pt-br";
-moment.locale("pt-br");
+import Footer from "../../components/Footer/Footer";
 
-function Movies({ history }) {
+function Persons({ history, ...props }) {
+  const { match } = props;
   const listScroll = useRef(null);
   const scrollToRefObject = (ref) => window.scrollTo(0, ref.current?.offsetTop);
 
-  const [type, setType] = useState("movie");
+  const [loading, setLoading] = useState(false);
   const [listMovie, setListMovie] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [type, setType] = useState("movie");
 
   //Pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -28,18 +24,19 @@ function Movies({ history }) {
   const [totalResults, setTotalResults] = useState(null);
 
   useEffect(() => {
-    function LoadMovies() {
+    function LoadPersons() {
       scrollToRefObject(listScroll);
       setLoading(true);
       api
-        .get(`/movie/${type == "movie" ? "popular" : "top_rated"}`, {
+        .get(`/person/popular`, {
           params: {
             page: currentPage,
+            query: match.params.query,
           },
         })
         .then((response) => {
           if (response.status == 200) {
-            console.log("LoadMovies success");
+            console.log("LoadPersons success");
             console.log(response.data);
 
             setListMovie(response.data.results);
@@ -48,25 +45,25 @@ function Movies({ history }) {
           }
         })
         .catch((error) => {
-          console.log("LoadMovies error " + error);
+          console.log("LoadPersons error " + error);
         })
-        .finally(() => {
-          setTimeout(() => {
-            setLoading(false);
-          }, 500);
-        });
+        .finally(() => setLoading(false));
     }
 
-    LoadMovies();
-  }, [type, currentPage]);
+    LoadPersons();
+  }, [type, currentPage, match]);
 
   return (
     <div ref={listScroll}>
-      <MainNavBar history={history} />
+      <MainNavBar
+        history={history}
+        query={match.params.query}
+        handler_current_page={setCurrentPage}
+      />
 
       <Container fluid>
         <ChooserType
-          screen="movies"
+          screen="person"
           handler_current_page={setCurrentPage}
           handler_type={setType}
           type={type}
@@ -74,22 +71,37 @@ function Movies({ history }) {
 
         <div className="mt-5 d-flex flex-wrap">
           {loading && <LoadingCard qtd={8} />}
+
+          {!loading && listMovie.length == 0 && (
+            <div className="container-empty">
+              <p>
+                Não foram encontrados resultados que correspondam aos seus
+                critérios de busca.
+              </p>
+            </div>
+          )}
           {!loading && (
-            <MainCard type={type} list_movie={listMovie} history={history} />
+            <MainCard
+              type={"person"}
+              list_movie={listMovie}
+              history={history}
+            />
           )}
         </div>
 
-        <MainPagination
-          handler_current_page={setCurrentPage}
-          current_page={currentPage}
-          total_results={totalResults}
-          last_page={lastPage}
-          loading={loading}
-        />
+        {listMovie.length > 0 && (
+          <MainPagination
+            handler_current_page={setCurrentPage}
+            current_page={currentPage}
+            total_results={totalResults}
+            last_page={lastPage}
+            loading={loading}
+          />
+        )}
       </Container>
       <Footer />
     </div>
   );
 }
 
-export default Movies;
+export default Persons;
