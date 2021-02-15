@@ -1,4 +1,6 @@
-![Logo TMDB](./assets/img/logo.png?raw=true "Logo TMDB")
+![Logo TMDB](assets/img/logo.png?raw=true "Logo TMDB")
+
+## Um WebApp feito com ReactJs consumindo a api pública do TMBD
 
 # Getting Started with Create React App
 
