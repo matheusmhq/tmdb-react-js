@@ -1,4 +1,4 @@
-![Logo TMDB](./assets/img/logo.png?raw=true "Logo TMDB")
+![Logo TMDB](assets/img/logo.png?raw=true "Logo TMDB")
 
 # Getting Started with Create React App
 
