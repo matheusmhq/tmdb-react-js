@@ -16,7 +16,7 @@ function Footer() {
       <a
         className="view-code"
         target="_blank"
-        href="https://matheusmhq.com.br/"
+        href="https://github.com/matheusmhq/tmdb-react-js"
       >
         Veja o código no Github
         <FontAwesomeIcon className="ml-2" icon={faGithub} />
