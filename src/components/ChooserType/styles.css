@@ -1,5 +1,6 @@
 .container-type {
   display: flex;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 500px) {
@@ -12,28 +13,43 @@
 .discover-text,
 .movie-text,
 .discover-text,
-.serie-text {
-  color: red;
+.serie-text,
+.person-text {
   margin-right: 10px;
-  color: var(--darkest_gray);
   font-weight: bold;
   font-size: 30px;
+  margin-bottom: 0;
 }
 
 .movie-text {
   color: var(--light_blue);
   cursor: pointer;
+  font-family: "Reggae One", cursive;
 }
 
 .movie-text:hover {
   color: var(--light_blue);
+  font-family: "Reggae One", cursive;
 }
 
 .serie-text {
   color: var(--light_green);
   cursor: pointer;
+  font-family: "Reggae One", cursive;
 }
 
 .serie-text:hover {
   color: var(--light_green);
+  font-family: "Reggae One", cursive;
+}
+
+.person-text {
+  color: var(--brand_yellow);
+  cursor: pointer;
+  font-family: "Reggae One", cursive;
+}
+
+.person-text:hover {
+  color: var(--brand_yellow);
+  font-family: "Reggae One", cursive;
 }

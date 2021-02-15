@@ -90,7 +90,7 @@ function Discover({ history }) {
           type={type}
         />
 
-        <div className="d-flex flex-wrap">
+        <div className="d-flex flex-wrap mt-4">
           <Col xs={12} md={4} lg={2} className="mb-3 mb-md-0">
             <Form.Label className="field-label">Ano</Form.Label>
             <Select

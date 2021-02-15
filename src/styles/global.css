@@ -1,3 +1,11 @@
+@font-face {
+  src: url("https://fonts.googleapis.com/css2?family=Newsreader:wght@200&family=Oswald:wght@500&display=swap");
+}
+
+@font-face {
+  src: url("https://fonts.googleapis.com/css2?family=Newsreader:wght@200&family=Reggae+One&display=swap");
+}
+
 /* Colors */
 :root {
   --brand_blue: #032541;
@@ -32,6 +40,7 @@ body {
 *:focus,
 *:hover {
   outline: none !important;
+  font-family: "Oswald", sans-serif;
 }
 
 button:focus {

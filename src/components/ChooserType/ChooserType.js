@@ -75,7 +75,7 @@ function ChooserType({ ...props }) {
       <p className="discover-text">{obj?.Five}</p>
       <a
         onClick={(e) => HandlerType(e, "person")}
-        className={`serie-text ${type == "person" ? "underline" : ""}`}
+        className={`person-text ${type == "person" ? "underline" : ""}`}
       >
         {obj?.Six}
       </a>

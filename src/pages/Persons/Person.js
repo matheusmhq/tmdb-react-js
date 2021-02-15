@@ -118,12 +118,8 @@ function Person({ history, ...props }) {
             <Col xs={12} md={4} lg={4}>
               <div className="info text-center text-md-left">
                 <img
-                  title={
-                    details.title != undefined ? details.title : details.name
-                  }
-                  alt={
-                    details.title != undefined ? details.title : details.name
-                  }
+                  title={details.name}
+                  alt={details.name}
                   style={{ borderRadius: 6 }}
                   className="mb-4 img-fluid"
                   src={
@@ -136,6 +132,10 @@ function Person({ history, ...props }) {
                   social={details.external_ids}
                   homepage={details.homepage}
                 />
+
+                <h1 className="d-block d-md-none font-weight-bold mb-4 mt-3 text-center text-md-left">
+                  {details.name}
+                </h1>
                 <h3 className="mt-3">Informações pessoais</h3>
                 <div className="person-info">{RenderInfo()}</div>
               </div>
@@ -143,7 +143,7 @@ function Person({ history, ...props }) {
 
             <Col xs={12} md={8} lg={8}>
               <div className="panel">
-                <h1 className="font-weight-bold mb-4 text-center text-md-left">
+                <h1 className="d-none d-md-block font-weight-bold mb-4 text-center text-md-left">
                   {details.name}
                 </h1>
 
