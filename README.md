@@ -37,10 +37,11 @@ As principais bibliotecas usadas nesse projeto:
 
 - [Página Detalhes (details)](https://tmdb-movies.netlify.app/details/movie/603) - Exibe informações detalhadas como **_data de lançamento_**, **_gêneros_**, **_tempo de duração_**, **_trailer_** etc.. sobre o filme ou série escolhida, mostrando também informações sobre o **_elenco_** e **_recomendações_**.
 
-- Todas as páginas que contém listagem estão **_páginadas_**.
+- OBS: Todas as páginas que contém listagem estão **_páginadas_**.
 
+#Live
 
-
+[TMDB ReactJs - Live](https://tmdb-movies.netlify.app/)
 
 # Iniciando
 
