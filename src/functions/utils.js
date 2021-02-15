@@ -63,10 +63,8 @@ export function ConvertRuntime(min) {
     let m = min % 60;
     h = h < 10 ? "0" + h + "h" : h + "h";
     m = m < 10 ? "0" + m + "min" : m + "min";
-
     if (h == "00h") h = "";
     if (m == "00min") m = "";
-
     return `${h} ${m}`;
   }
 }

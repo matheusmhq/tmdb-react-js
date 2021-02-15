@@ -48,7 +48,7 @@ function Discover({ history }) {
         page: currentPage,
         sort_by: sort?.value,
       };
-      if (type == "movie") obj.primary_release_year = currentPage;
+      if (type == "movie") obj.primary_release_year = year?.value;
       else obj.first_air_date_year = year?.value;
 
       api

@@ -26,12 +26,17 @@
   border: none;
 }
 
-.container-header .nav-link {
-  color: white !important;
-}
-
 @media screen and (max-width: 769px) {
   .container-header .btn-search {
     width: 100%;
   }
+}
+
+.active-page {
+  color: var(--light_green) !important;
+  font-weight: bold;
+}
+
+.disabled-page {
+  color: white !important;
 }

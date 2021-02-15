@@ -9,7 +9,7 @@ function MainNavBar({ ...props }) {
   const { history, query, handler_current_page } = props;
   const location = useLocation();
 
-  const [word, setWord] = useState(query);
+  const [word, setWord] = useState(query != undefined ? query : "");
   const [isPageSearch, setIsPageSearch] = useState(
     location.pathname.includes("search")
   );
@@ -26,6 +26,19 @@ function MainNavBar({ ...props }) {
     history.push({ pathname: `/search/${word}` });
   }
 
+  function VerifyActualPage(page) {
+    //Veriry discover
+    if (page == "/") {
+      var locationSplit = location.pathname.split("/");
+      if (locationSplit[1] == "") return "active-page";
+      else return "disabled-page";
+    }
+
+    //Verify others page
+    if (location.pathname.includes(page)) return "active-page";
+    else return "disabled-page";
+  }
+
   return (
     <div
       className={`container-header ${
@@ -39,9 +52,18 @@ function MainNavBar({ ...props }) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/">Descubra</Nav.Link>
-            <Nav.Link href="/movies">Filmes</Nav.Link>
-            <Nav.Link href="/tvs">Séries</Nav.Link>
+            <Nav.Link className={`${VerifyActualPage("/")}`} href="/">
+              Descubra
+            </Nav.Link>
+            <Nav.Link
+              className={`${VerifyActualPage("movies")}`}
+              href="/movies"
+            >
+              Filmes
+            </Nav.Link>
+            <Nav.Link className={`${VerifyActualPage("tvs")}`} href="/tvs">
+              Séries
+            </Nav.Link>
           </Nav>
           <Form
             inline

@@ -2,13 +2,18 @@ import React, { useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Col } from "react-bootstrap";
 
-function LoadingDetails({ ...props }) {
+import "./styles.css";
+
+function LoadingDetails() {
   return (
     <>
       <Col xs={12}>
         <Skeleton className="mb-3 p-5" height={440} />
       </Col>
-      <div className="d-flex flex-wrap">
+      <div
+        className="d-flex flex-wrap container-loading-details-info"
+        style={{ maxWidth: 1144 }}
+      >
         <Col xs={12} md={8}>
           <Skeleton className="mb-3 p-5" height={440} />
         </Col>
