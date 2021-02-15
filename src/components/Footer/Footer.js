@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import "./styles.css";
 
@@ -6,11 +8,19 @@ function Footer() {
   return (
     <footer>
       <div className="d-flex justify-content-center align-items-center">
-        <p className="mr-1">Desenvolvido por </p>
-        <a target="_blank" href="https://matheusmhq.com.br/">
+        <p className="mr-1 credits-text">Desenvolvido por </p>
+        <a className="mhq" target="_blank" href="https://matheusmhq.com.br/">
           Matheus Henrique
         </a>
       </div>
+      <a
+        className="view-code"
+        target="_blank"
+        href="https://matheusmhq.com.br/"
+      >
+        Veja o código no Github
+        <FontAwesomeIcon className="ml-2" icon={faGithub} />
+      </a>
     </footer>
   );
 }

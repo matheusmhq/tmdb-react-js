@@ -214,7 +214,15 @@ function Details({ history, ...props }) {
 
       {loading && <LoadingDetails />}
 
-      {!loading && (
+      {!loading && details.id == undefined && (
+        <div className="container-empty mt-5">
+          <p>
+            Ops! Não conseguimos encontrar a página que você está procurando
+          </p>
+        </div>
+      )}
+
+      {!loading && details.id != undefined && (
         <>
           <div
             className="image-bg-top d-flex flex-wrap justify-content-center"

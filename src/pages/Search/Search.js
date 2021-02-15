@@ -84,6 +84,7 @@ function Search({ history, ...props }) {
               </p>
             </div>
           )}
+
           {!loading && (
             <MainCard type={type} list_movie={listMovie} history={history} />
           )}

@@ -75,7 +75,7 @@ function Person({ history, ...props }) {
           <p>{details.gender == 1 ? "Feminino" : "Masculino"}</p>
         </div>
 
-        {details.birthday != "" && (
+        {details.birthday != "" && details.birthday != null && (
           <div className="info-item">
             <h3>Nascimento</h3>
             <p>

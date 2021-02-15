@@ -1,21 +1,40 @@
 footer {
   background-color: var(--brand_blue);
-  padding: 10px;
+  padding: 20px 10px;
   color: white;
   margin-top: 4em;
+  text-align: center;
 }
 
 footer p {
   margin-bottom: 0;
-  text-align: center;
 }
 
-footer a {
+.credits-text {
+  color: #ddd;
+}
+
+footer .mhq {
   color: white;
   font-weight: bold;
+  transition: 1s all;
 }
 
-footer a:hover {
+footer .mhq:hover {
   color: white;
   text-decoration: none;
+  opacity: 0.9;
+}
+
+footer .view-code {
+  color: #ddd;
+  margin-top: 10px;
+  display: block;
+  transition: 1s all;
+}
+
+footer .view-code:hover {
+  color: #ddd;
+  text-decoration: none;
+  opacity: 0.9;
 }
