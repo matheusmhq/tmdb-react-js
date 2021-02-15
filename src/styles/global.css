@@ -111,4 +111,5 @@ button:focus {
   width: 100%;
   text-align: center;
   height: 70vh;
+  padding: 0 10px;
 }
