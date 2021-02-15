@@ -16,7 +16,7 @@ Um WebApp totalmente responsivo feito com [React](https://pt-br.reactjs.org/), c
 
 As principais bibliotecas usadas nesse projeto:
 
-| Ferramenta             | Descrição   |
+| Bibliotecas             | Descrição   |
 | :-------------:|--------------|
 | [React](http://facebook.github.io/react/index.html) | Uma biblioteca JavaScript para criar interfaces de usuário. |
 | [Bootstrap](https://react-bootstrap.github.io/) | A biblioteca de front-end mais popular reconstruída para React. |
