@@ -12,6 +12,16 @@ import { HexToRgbA, GetColorRating } from "../../functions/utils";
 function MainCard({ ...props }) {
   const { list_movie, history } = props;
 
+  function RenderDate(item) {
+    var date = "";
+    if (item.release_date != undefined) {
+      date = moment(item.release_date).format("LL");
+    } else if (item.first_air_date != undefined) {
+      date = moment(item.first_air_date).format("LL");
+    }
+    return date;
+  }
+
   return (
     <>
       {list_movie.map((item) => {
@@ -66,13 +76,7 @@ function MainCard({ ...props }) {
                     {item.title != undefined ? item.title : item.name}
                   </Card.Title>
                 </a>
-                <Card.Text>
-                  {moment(
-                    item.release_date != undefined
-                      ? item.release_date
-                      : item.first_air_date
-                  ).format("LL")}
-                </Card.Text>
+                <Card.Text>{RenderDate(item)}</Card.Text>
               </Card.Body>
             </Card>
           </Col>

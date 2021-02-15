@@ -58,6 +58,7 @@ button:focus {
 
 .card-text {
   color: var(--dark_gray);
+  min-height: 24px;
 }
 
 .limit_word_one {

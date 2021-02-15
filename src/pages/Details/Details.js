@@ -85,32 +85,24 @@ function Details({ history, ...props }) {
 
   function RenderYear() {
     if (type == "movie") {
-      if (details.release_date != undefined) {
-        return <span>({moment(details.release_date).format("YYYY")})</span>;
+      if (details.release_date != "") {
+        return moment(details.release_date).format("YYYY");
       }
     } else {
-      if (details.first_air_date != undefined) {
-        return <span>({moment(details.first_air_date).format("YYYY")})</span>;
+      if (details.first_air_date != "") {
+        return moment(details.first_air_date).format("YYYY");
       }
     }
   }
 
   function RenderDate() {
     if (type == "movie") {
-      if (details.release_date != undefined) {
-        return (
-          <p className="details-date">
-            {moment(details.release_date).format("LL")}
-          </p>
-        );
+      if (details.release_date != "") {
+        return moment(details.release_date).format("LL");
       }
     } else {
-      if (details.first_air_date != undefined) {
-        return (
-          <p className="details-date">
-            {moment(details.first_air_date).format("LL")}
-          </p>
-        );
+      if (details.first_air_date != "") {
+        return moment(details.first_air_date).format("LL");
       }
     }
   }
@@ -275,10 +267,10 @@ function Details({ history, ...props }) {
                 <div className="details-right text-center text-md-left">
                   <h1 className="details-title my-4 my-md-0">
                     {details.title != undefined ? details.title : details.name}{" "}
-                    {RenderYear()}
+                    <span>{RenderYear()}</span>
                   </h1>
                   <div className="d-flex flex-column flex-md-row">
-                    {RenderDate()}
+                    <p className="details-date">{RenderDate()}</p>
                     <div className=" d-flex justify-content-center align-items-center container-gender">
                       <p>{GetGenres(details.genres)}</p>
                     </div>

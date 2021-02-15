@@ -26,13 +26,7 @@ function CardCast({ ...props }) {
                 />
               </a>
               <Card.Body>
-                <a
-                  href={`/details/${item.name != undefined ? "movie" : "tv"}/${
-                    item.id
-                  }`}
-                  title={item.name}
-                  alt={item.name}
-                >
+                <a href={``} title={item.name} alt={item.name}>
                   <Card.Title className="limit_word">{item.name}</Card.Title>
                 </a>
                 <Card.Text className="limit_word_one">
