@@ -126,16 +126,28 @@ function Discover({ history }) {
 
         <div className="mt-5 d-flex flex-wrap">
           {loading && <LoadingCard qtd={8} />}
+
+          {!loading && listMovie.length == 0 && (
+            <div className="container-empty">
+              <p>
+                Não foram encontrados resultados que correspondam aos seus
+                critérios de busca.
+              </p>
+            </div>
+          )}
+
           {!loading && <MainCard list_movie={listMovie} history={history} />}
         </div>
 
-        <MainPagination
-          handler_current_page={setCurrentPage}
-          current_page={currentPage}
-          total_results={totalResults}
-          last_page={lastPage}
-          loading={loading}
-        />
+        {listMovie.length > 0 && (
+          <MainPagination
+            handler_current_page={setCurrentPage}
+            current_page={currentPage}
+            total_results={totalResults}
+            last_page={lastPage}
+            loading={loading}
+          />
+        )}
       </Container>
       <Footer />
     </div>
