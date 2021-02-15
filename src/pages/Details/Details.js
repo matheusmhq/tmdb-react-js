@@ -21,6 +21,7 @@ import {
   StatusMovieToBr,
   StatusTvToBr,
   TypeTvToBr,
+  GetColorRating,
 } from "../../functions/utils";
 import placeholder from "../../assets/img/placeholder.jpg";
 import Colors from "../../styles/Colors";
@@ -80,6 +81,38 @@ function Details({ history, ...props }) {
       list += `${item.name}${index != genres.length - 1 ? "," : ""} `;
     });
     return list;
+  }
+
+  function RenderYear() {
+    if (type == "movie") {
+      if (details.release_date != undefined) {
+        return <span>({moment(details.release_date).format("YYYY")})</span>;
+      }
+    } else {
+      if (details.first_air_date != undefined) {
+        return <span>({moment(details.first_air_date).format("YYYY")})</span>;
+      }
+    }
+  }
+
+  function RenderDate() {
+    if (type == "movie") {
+      if (details.release_date != undefined) {
+        return (
+          <p className="details-date">
+            {moment(details.release_date).format("LL")}
+          </p>
+        );
+      }
+    } else {
+      if (details.first_air_date != undefined) {
+        return (
+          <p className="details-date">
+            {moment(details.first_air_date).format("LL")}
+          </p>
+        );
+      }
+    }
   }
 
   function RenderInfoMovie() {
@@ -222,10 +255,13 @@ function Details({ history, ...props }) {
                       strokeWidth={7}
                       styles={buildStyles({
                         textSize: "28px",
-                        pathColor: Colors.brand_green,
+                        pathColor: GetColorRating(details.vote_average),
                         textColor: "white",
-                        trailColor: HexToRgbA(Colors.brand_green, 0.3),
-                        backgroundColor: Colors.brand_blue,
+                        trailColor: HexToRgbA(
+                          GetColorRating(details.vote_average),
+                          0.3
+                        ),
+                        backgroundColor: "black",
                       })}
                       background={true}
                       backgroundPadding={true}
@@ -239,18 +275,10 @@ function Details({ history, ...props }) {
                 <div className="details-right text-center text-md-left">
                   <h1 className="details-title my-4 my-md-0">
                     {details.title != undefined ? details.title : details.name}{" "}
-                    {details.release_date != "" && (
-                      <span>
-                        ({moment(details.release_date).format("YYYY")})
-                      </span>
-                    )}
+                    {RenderYear()}
                   </h1>
                   <div className="d-flex flex-column flex-md-row">
-                    {details.release_date != "" && (
-                      <p className="details-date">
-                        {moment(details.release_date).format("LL")}
-                      </p>
-                    )}
+                    {RenderDate()}
                     <div className=" d-flex justify-content-center align-items-center container-gender">
                       <p>{GetGenres(details.genres)}</p>
                     </div>

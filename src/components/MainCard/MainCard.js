@@ -7,7 +7,7 @@ import { GetImage } from "../../functions/utils";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import Colors from "../../styles/Colors";
-import { HexToRgbA } from "../../functions/utils";
+import { HexToRgbA, GetColorRating } from "../../functions/utils";
 
 function MainCard({ ...props }) {
   const { list_movie, history } = props;
@@ -39,10 +39,13 @@ function MainCard({ ...props }) {
                     strokeWidth={7}
                     styles={buildStyles({
                       textSize: "28px",
-                      pathColor: Colors.brand_green,
+                      pathColor: GetColorRating(item.vote_average),
                       textColor: "white",
-                      trailColor: HexToRgbA(Colors.brand_green, 0.3),
-                      backgroundColor: Colors.brand_blue,
+                      trailColor: HexToRgbA(
+                        GetColorRating(item.vote_average),
+                        0.3
+                      ),
+                      backgroundColor: "black",
                     })}
                     background={true}
                     backgroundPadding={true}
@@ -63,7 +66,13 @@ function MainCard({ ...props }) {
                     {item.title != undefined ? item.title : item.name}
                   </Card.Title>
                 </a>
-                <Card.Text>{moment(item.release_date).format("LL")}</Card.Text>
+                <Card.Text>
+                  {moment(
+                    item.release_date != undefined
+                      ? item.release_date
+                      : item.first_air_date
+                  ).format("LL")}
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>

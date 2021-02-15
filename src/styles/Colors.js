@@ -2,6 +2,8 @@ const Colors = {
   brand_blue: "#032541",
   brand_green: "#13ce66",
   brand_pink: "#fe8bc4",
+  brand_red: "#ff0000 ",
+  brand_yellow: "#ffcb2c",
 
   darkest_gray: "#333333",
   darker_gray: "#666666",

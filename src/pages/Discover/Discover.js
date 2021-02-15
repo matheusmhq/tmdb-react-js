@@ -43,13 +43,17 @@ function Discover({ history }) {
     function LoadMovies() {
       scrollToRefObject(listScroll);
       setLoading(true);
+
+      var obj = {
+        page: currentPage,
+        sort_by: sort?.value,
+      };
+      if (type == "movie") obj.primary_release_year = currentPage;
+      else obj.first_air_date_year = year?.value;
+
       api
         .get(`/discover/${type}`, {
-          params: {
-            page: currentPage,
-            primary_release_year: year?.value,
-            sort_by: sort?.value,
-          },
+          params: obj,
         })
         .then((response) => {
           if (response.status == 200) {

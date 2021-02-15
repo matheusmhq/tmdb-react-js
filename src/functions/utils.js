@@ -117,3 +117,15 @@ export function TypeTvToBr(type) {
       return "Reality Show";
   }
 }
+
+export function GetColorRating(rating) {
+  if (rating == 0) {
+    return "#000000";
+  } else if (rating > 0 && rating <= 3) {
+    return Colors.brand_red;
+  } else if (rating > 3 && rating <= 6) {
+    return Colors.brand_yellow;
+  } else if (rating > 6 && rating <= 10) {
+    return Colors.brand_green;
+  }
+}

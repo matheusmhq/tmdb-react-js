@@ -2,7 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--dark_bt);
+  background-color: var(--brand_blue);
+}
+
+.container-header .navbar {
+  background-color: var(--brand_blue) !important;
 }
 
 .container-header nav {
