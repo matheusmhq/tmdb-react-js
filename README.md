@@ -43,7 +43,7 @@ As principais bibliotecas usadas nesse projeto:
 
 - [Pessoas (/persons)](https://tmdb-movies.netlify.app/persons) - Lista **_pessoas_**
 
-- [Detalhes Pessoas (/persons)](https://tmdb-movies.netlify.app/person/6384) - Exibe informações detalhadas como **_data de nascimento_**, **_gênero_**, **_trabalhos_** etc... sobre a pessoa escolhida.
+- [Detalhes Pessoas (/person)](https://tmdb-movies.netlify.app/person/6384) - Exibe informações detalhadas como **_data de nascimento_**, **_gênero_**, **_trabalhos_** etc... sobre a pessoa escolhida.
 
 - OBS: Todas as páginas que contém listagem estão **_páginadas_**.
 
