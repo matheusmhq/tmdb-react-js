@@ -20,12 +20,27 @@ As principais bibliotecas usadas nesse projeto:
 | :-------------:|--------------|
 | [React](http://facebook.github.io/react/index.html) | Uma biblioteca JavaScript para criar interfaces de usuário. |
 | [Bootstrap](https://react-bootstrap.github.io/) | A biblioteca de front-end mais popular reconstruída para React. |
-| [Router Dom](https://reactrouter.com/) | O React Router Dom é uma lib completa para controle de rotas |
+| [Router Dom](https://reactrouter.com/) | O React Router Dom é uma lib completa para controle de rotas. |
 | [Axios](https://github.com/axios/axios) | Cliente HTTP baseado em promessa para o navegador e node.js. |
 | [Moment](https://momentjs.com/) | Uma biblioteca de datas JavaScript para analisar, validar, manipular e formatar datas. |
 | [Loading Skeleton](https://www.npmjs.com/package/react-loading-skeleton) | Crie lindos esqueletos de carregamento animados que se adaptam automaticamente ao seu aplicativo. |
 | [Select](https://react-select.com) | Um select flexível e bonito para ReactJS com multiselect, autocomplete, assíncrono e suporte criável. |
 | [Circular Progressbar](https://momentjs.com/) | Um componente da barra de progresso circular, desenvolvido com SVG e amplamente personalizável. |
+
+# Funcionalidades
+
+- [Página Descubra (discover)](https://tmdb-movies.netlify.app/) - Lista **_filmes_** ou **_séries_** baseado nos filtro selecionados (Ano e Ordernar por).
+
+- [Página Filmes/Séries (movie/tvs)](https://tmdb-movies.netlify.app/movies) - Lista **_filmes_** ou **_séries_** baseado no tipo selecionado (Populares ou Mais votados).
+
+- [Página Pesquisa (search)](https://tmdb-movies.netlify.app/search/matrix) - Lista **_filmes_** ou **_séries_** baseado no texto digitado.
+
+- [Página Detalhes (details)](https://tmdb-movies.netlify.app/details/movie/603) - Exibe informações detalhadas como **_data de lançamento_**, **_gêneros_**, **_tempo de duração_**, **_trailer_** etc.. sobre o filme ou série escolhida, mostrando também informações sobre o **_elenco_** e **_recomendações_**.
+
+- Todas as páginas que contém listagem estão **_páginadas_**.
+
+
+
 
 # Iniciando
 
