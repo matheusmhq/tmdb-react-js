@@ -10,7 +10,7 @@
 
 [![GitHub license](https://img.shields.io/github/license/matheusmhq/tmdb-react-js?style=plastic)](https://github.com/matheusmhq/tmdb-react-js/blob/main/LICENSE)
 
-Um WebApp totalmente responsivo feito com [React](https://pt-br.reactjs.org/), consumindo a api pública do [TMDB](https://www.themoviedb.org/)
+Um WebApp totalmente responsivo feito com [React](https://pt-br.reactjs.org/) consumindo a api pública do [TMDB](https://www.themoviedb.org/).
 
 # Live
 
@@ -53,7 +53,7 @@ As principais bibliotecas usadas nesse projeto:
   cd tmdb-react-js
   ```
 
-- instale as dependências
+- Instale as dependências
 
   ```
   yarn install ou npm install
