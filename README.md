@@ -4,7 +4,7 @@
 	</a>
 </p>
 
-<h4 align="center"> 🚩 TMDB ReactJs 🚩 </h4>
+<h4 align="center"> 🌟 TMDB ReactJs 🌟 </h4>
 
 #
 
