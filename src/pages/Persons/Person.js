@@ -79,7 +79,22 @@ function Person({ history, ...props }) {
           <div className="info-item">
             <h3>Nascimento</h3>
             <p>
-              {moment(details.birthday).format("DD/MM/YYYY")} (
+              {moment(details.birthday).format("DD/MM/YYYY")}{" "}
+              {details.deathday == null && (
+                <span>
+                  ({`${moment().diff(details.birthday, "years")} anos de idade`}
+                  )
+                </span>
+              )}
+            </p>
+          </div>
+        )}
+
+        {details.deathday != null && (
+          <div className="info-item">
+            <h3>Falescimento</h3>
+            <p>
+              {moment(details.deathday).format("DD/MM/YYYY")} (
               {`${moment().diff(details.birthday, "years")} anos de idade`})
             </p>
           </div>
