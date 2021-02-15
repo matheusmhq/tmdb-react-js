@@ -29,20 +29,20 @@ export function GetListSort() {
       value: "primary_release_date.asc",
     },
     {
-      label: "Título Desc",
-      value: "title.desc",
-    },
-    {
-      label: "Título Asc",
-      value: "title.Asc",
-    },
-    {
-      label: "Avaliação (A - Z)",
+      label: "Avaliação Desc",
       value: "vote_average.desc",
     },
     {
-      label: "Avaliação (Z - A)",
+      label: "Avaliação Adc",
       value: "vote_average.asc",
+    },
+    {
+      label: "Título (Z - A)",
+      value: "original_title.desc",
+    },
+    {
+      label: "Título (A- Z)",
+      value: "original_title.Asc",
     },
   ];
 }
