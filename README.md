@@ -10,7 +10,7 @@
 
 [![GitHub license](https://img.shields.io/github/license/matheusmhq/tmdb-react-js?style=plastic)](https://github.com/matheusmhq/tmdb-react-js/blob/main/LICENSE)
 
-Um WebApp totalmente responsivo construído com [React](https://pt-br.reactjs.org/) consumindo a api pública do [TMDB](https://www.themoviedb.org/).
+Um React app totalmente responsivo construído com [React](https://pt-br.reactjs.org/) consumindo a api pública do [TMDB](https://www.themoviedb.org/).
 
 # Live
 
