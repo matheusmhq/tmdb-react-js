@@ -63,13 +63,6 @@ function Person({ history, ...props }) {
           </div>
         )}
 
-        {details.status != "" && (
-          <div className="info-item">
-            <h3>Creditado(a) em</h3>
-            <p>10</p>
-          </div>
-        )}
-
         <div className="info-item">
           <h3>Gênero</h3>
           <p>{details.gender == 1 ? "Feminino" : "Masculino"}</p>
@@ -82,8 +75,7 @@ function Person({ history, ...props }) {
               {moment(details.birthday).format("DD/MM/YYYY")}{" "}
               {details.deathday == null && (
                 <span>
-                  ({`${moment().diff(details.birthday, "years")} anos de idade`}
-                  )
+                  ({`${moment().diff(details.birthday, "years")} de idade`})
                 </span>
               )}
             </p>
@@ -95,7 +87,7 @@ function Person({ history, ...props }) {
             <h3>Falescimento</h3>
             <p>
               {moment(details.deathday).format("DD/MM/YYYY")} (
-              {`${moment().diff(details.birthday, "years")} anos de idade`})
+              {`${moment().diff(details.birthday, "years")} de idade`})
             </p>
           </div>
         )}

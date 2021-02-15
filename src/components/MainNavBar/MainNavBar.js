@@ -80,7 +80,7 @@ function MainNavBar({ ...props }) {
           >
             <FormControl
               type="text"
-              placeholder="Filmes, Séries ou Pessoas"
+              placeholder="Filme, Série ou Pessoa..."
               className="mr-sm-2"
               onChange={(e) => {
                 setWord(e.currentTarget.value);
