@@ -12,6 +12,10 @@
 
 Um WebApp totalmente responsivo feito com [React](https://pt-br.reactjs.org/), consumindo a api pública do [TMDB](https://www.themoviedb.org/)
 
+# Live
+
+[TMDB ReactJs - Live](https://tmdb-movies.netlify.app/)
+
 ## Bibliotecas
 
 As principais bibliotecas usadas nesse projeto:
@@ -35,13 +39,9 @@ As principais bibliotecas usadas nesse projeto:
 
 - [Página Pesquisa (search)](https://tmdb-movies.netlify.app/search/matrix) - Lista **_filmes_** ou **_séries_** baseado no texto digitado.
 
-- [Página Detalhes (details)](https://tmdb-movies.netlify.app/details/movie/603) - Exibe informações detalhadas como **_data de lançamento_**, **_gêneros_**, **_tempo de duração_**, **_trailer_** etc.. sobre o filme ou série escolhida, mostrando também informações sobre o **_elenco_** e **_recomendações_**.
+- [Página Detalhes (details)](https://tmdb-movies.netlify.app/details/movie/603) - Exibe informações detalhadas como **_data de lançamento_**, **_gêneros_**, **_tempo de duração_**, **_trailer_** etc... sobre o filme ou série escolhida, mostrando também informações sobre o **_elenco_** e **_recomendações_**.
 
 - OBS: Todas as páginas que contém listagem estão **_páginadas_**.
-
-#Live
-
-[TMDB ReactJs - Live](https://tmdb-movies.netlify.app/)
 
 # Iniciando
 
