@@ -1,7 +1,5 @@
-<h1 align="center">
-  <br>
-  <img src="#" alt="TMDB" height="125" width="125">
-  <br><br>
-</h1>
+![Logo TMDB](https://upload.wikimedia.org/wikipedia/commons/6/6e/Tmdb-312x276-logo.png)
 
-<p align="center">Um WebApp feito com ReactJs consumindo a api pública do TMBD</p>
+#
+
+> Um WebApp feito com ReactJs consumindo a api pública
