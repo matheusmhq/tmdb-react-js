@@ -33,13 +33,17 @@ As principais bibliotecas usadas nesse projeto:
 
 # Funcionalidades
 
-- [Descubra (discover)](https://tmdb-movies.netlify.app/) - Lista **_filmes_** ou **_séries_** baseado nos filtro selecionados (Ano e Ordernar por).
+- [Descubra (/discover)](https://tmdb-movies.netlify.app/) - Lista **_filmes_** ou **_séries_** baseado nos filtro selecionados (Ano e Ordernar por).
 
-- [Filmes/Séries (movie/tvs)](https://tmdb-movies.netlify.app/movies) - Lista **_filmes_** ou **_séries_** baseado no tipo selecionado (Populares ou Mais votados).
+- [Filmes/Séries (/movie ou /tvs)](https://tmdb-movies.netlify.app/movies) - Lista **_filmes_** ou **_séries_** baseado no tipo selecionado (Populares ou Mais votados).
 
-- [Pesquisa (search)](https://tmdb-movies.netlify.app/search/matrix) - Lista **_filmes_** ou **_séries_** baseado no texto digitado.
+- [Pesquisa (search)](https://tmdb-movies.netlify.app/search/matrix) - Lista **_filmes_**, **_séries_** ou **_pessoas_** baseado na palavra digitada.
 
-- [Detalhes (details)](https://tmdb-movies.netlify.app/details/movie/603) - Exibe informações detalhadas como **_data de lançamento_**, **_gêneros_**, **_tempo de duração_**, **_trailer_** etc... sobre o filme ou série escolhida, mostrando também informações sobre o **_elenco_** e **_recomendações_**.
+- [Filmes/Séries (/details)](https://tmdb-movies.netlify.app/details/movie/603) - Exibe informações detalhadas como **_data de lançamento_**, **_gêneros_**, **_tempo de duração_**, **_trailer_** etc... sobre o filme ou série escolhida, mostrando também informações sobre o **_elenco_** e **_recomendações_**.
+
+- [Pessoas (/persons)](https://tmdb-movies.netlify.app/persons) - Lista **_pessoas_**
+
+- [Detalhes Pessoas (/persons)](https://tmdb-movies.netlify.app/person/6384) - Exibe informações detalhadas como **_data de nascimento_**, **_gênero_**, **_trabalhos_** etc... sobre a pessoa escolhida.
 
 - OBS: Todas as páginas que contém listagem estão **_páginadas_**.
 
