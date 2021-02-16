@@ -9,12 +9,13 @@ function MainNavBar({ ...props }) {
   const { history, query, handler_current_page } = props;
   const location = useLocation();
 
-  const [word, setWord] = useState(query != undefined ? query : "");
+  const [word, setWord] = useState(query ? query : "");
   const [isPageSearch, setIsPageSearch] = useState(
     location.pathname.includes("search")
   );
 
   function GoToSearch(word) {
+    if (word == "") return false;
     if (isPageSearch) {
       history.replace({
         pathname: `/search/${word}`,
