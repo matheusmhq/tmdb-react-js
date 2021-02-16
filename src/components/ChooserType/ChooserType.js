@@ -12,7 +12,7 @@ function ChooserType({ ...props }) {
         setObj({
           One: "Descubra novos",
           Two: "Filmes",
-          Three: "Ou",
+          Three: "ou",
           Four: "Séries",
         });
         break;
@@ -22,7 +22,7 @@ function ChooserType({ ...props }) {
           Two: "Filmes",
           Three: ",",
           Four: "Séries",
-          Five: "Ou",
+          Five: "ou",
           Six: "Pessoas",
         });
         break;
@@ -30,7 +30,7 @@ function ChooserType({ ...props }) {
         setObj({
           One: "Encontre filmes",
           Two: "Populares",
-          Three: "Ou",
+          Three: "ou",
           Four: "Mais votados",
         });
         break;
@@ -38,7 +38,7 @@ function ChooserType({ ...props }) {
         setObj({
           One: "Encontre séries",
           Two: "Populares",
-          Three: "Ou",
+          Three: "ou",
           Four: "Mais votadas",
         });
         break;
