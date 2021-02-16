@@ -172,7 +172,7 @@ function Person({ history, ...props }) {
                       history={history}
                       list_movie={details.combined_credits.cast.slice(
                         0,
-                        showMore == true ? 999 : 8
+                        showMore ? 999 : 8
                       )}
                       type={"movie"}
                     />

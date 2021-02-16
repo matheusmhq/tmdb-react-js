@@ -9,7 +9,7 @@ const BtnMore = ({ handler_show, show, qty }) => {
           className="btn-show-cast btn-lg"
           onClick={() => handler_show(!show)}
         >
-          ver {show == true ? "menos" : "mais"}
+          ver {show ? "menos" : "mais"}
         </button>
       )}
     </div>

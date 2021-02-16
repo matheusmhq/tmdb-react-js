@@ -330,7 +330,7 @@ function Details({ history, ...props }) {
                     <CardCast
                       list_cast={details.credits.cast.slice(
                         0,
-                        showMore == true ? 999 : 8
+                        showMore ? 999 : 8
                       )}
                     />
                   </div>
