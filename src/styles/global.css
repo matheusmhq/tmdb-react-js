@@ -58,7 +58,8 @@ button:focus {
 
 .card-title {
   color: var(--darkest_gray);
-  min-height: 48px;
+  margin-bottom: 2px;
+  font-weight: bold;
 }
 
 .card-title:hover {
@@ -67,22 +68,13 @@ button:focus {
 
 .card-text {
   color: var(--dark_gray);
-  min-height: 24px;
 }
 
-.limit_word_one {
+.limit-text {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-}
-
-.limit_word {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
@@ -95,7 +87,7 @@ button:focus {
     font-size: 14px;
   }
   .card-text {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 

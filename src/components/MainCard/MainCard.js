@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Card } from "react-bootstrap";
+import { Col, Card, CardGroup } from "react-bootstrap";
 
 import placeholder from "../../assets/img/placeholder.jpg";
 import cast_placeholder from "../../assets/img/cast_placeholder.jpg";
@@ -7,7 +7,6 @@ import moment from "moment";
 import { GetImage } from "../../functions/utils";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import Colors from "../../styles/Colors";
 import { HexToRgbA, GetColorRating } from "../../functions/utils";
 
 function MainCard({ ...props }) {
@@ -16,9 +15,9 @@ function MainCard({ ...props }) {
   function RenderDate(item) {
     var date = "";
     if (item.release_date != undefined) {
-      date = moment(item.release_date).format("LL");
+      date = moment(item.release_date).format("ll");
     } else if (item.first_air_date != undefined) {
-      date = moment(item.first_air_date).format("LL");
+      date = moment(item.first_air_date).format("ll");
     }
     return date;
   }
@@ -57,8 +56,8 @@ function MainCard({ ...props }) {
     <>
       {list_movie.map((item) => {
         return (
-          <Col xs={6} md={4} lg={3} key={item.id}>
-            <Card className="mb-3">
+          <Col xs={6} sm={4} lg={3} key={item.id} className="mb-3">
+            <Card className=" h-100">
               <a href={GetUrl(item)} className="position-relative">
                 <Card.Img
                   title={item.title}
@@ -96,7 +95,7 @@ function MainCard({ ...props }) {
                   title={item.title}
                   alt={item.title}
                 >
-                  <Card.Title className="limit_word">
+                  <Card.Title>
                     {item.title != undefined ? item.title : item.name}
                   </Card.Title>
                 </a>
@@ -108,9 +107,7 @@ function MainCard({ ...props }) {
                   </Card.Text>
                 )}
                 {type == "person" && (
-                  <Card.Text className="limit_word_one">
-                    {RenderMainWorks(item.known_for)}
-                  </Card.Text>
+                  <Card.Text>{RenderMainWorks(item.known_for)}</Card.Text>
                 )}
               </Card.Body>
             </Card>

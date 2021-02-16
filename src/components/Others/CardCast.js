@@ -11,8 +11,8 @@ function CardCast({ ...props }) {
     <>
       {list_cast.map((item) => {
         return (
-          <Col xs={6} md={4} lg={3} key={item.id}>
-            <Card className="mb-3">
+          <Col xs={6} sm={4} lg={3} key={item.id} className="mb-3">
+            <Card className="h-100">
               <a href={`/person/${item.id}`} className="position-relative">
                 <Card.Img
                   title={item.name}
@@ -31,11 +31,9 @@ function CardCast({ ...props }) {
                   title={item.name}
                   alt={item.name}
                 >
-                  <Card.Title className="limit_word">{item.name}</Card.Title>
+                  <Card.Title>{item.name}</Card.Title>
                 </a>
-                <Card.Text className="limit_word_one">
-                  {item.character}
-                </Card.Text>
+                <Card.Text>{item.character}</Card.Text>
               </Card.Body>
             </Card>
           </Col>
