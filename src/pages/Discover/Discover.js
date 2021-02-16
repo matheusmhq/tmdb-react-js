@@ -91,7 +91,7 @@ function Discover({ history }) {
         />
 
         <div className="d-flex flex-wrap mt-4">
-          <Col xs={12} md={4} lg={2} className="mb-3 mb-md-0">
+          <Col xs={12} sm={4} lg={2} className="mb-3 mb-md-0">
             <Form.Label className="field-label">Ano</Form.Label>
             <Select
               noOptionsMessage={() => "Sem opções"}
@@ -107,7 +107,7 @@ function Discover({ history }) {
             />
           </Col>
 
-          <Col xs={12} md={4} lg={3}>
+          <Col xs={12} sm={8} md={6} lg={3}>
             <Form.Label className="field-label">Ordenar por</Form.Label>
             <Select
               noOptionsMessage={() => "Sem opções"}
