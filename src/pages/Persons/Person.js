@@ -56,7 +56,7 @@ function Person({ history, ...props }) {
   function RenderInfo() {
     return (
       <>
-        {details.known_for_department != "" && (
+        {details.known_for_department && (
           <div className="info-item">
             <h3>Conhecido(a) por</h3>
             <p>{GetDepartmentPerson(details.known_for_department)}</p>
@@ -68,7 +68,7 @@ function Person({ history, ...props }) {
           <p>{details.gender == 1 ? "Feminino" : "Masculino"}</p>
         </div>
 
-        {details.birthday != "" && details.birthday != null && (
+        {details.birthday && details.birthday != null && (
           <div className="info-item">
             <h3>Nascimento</h3>
             <p>
@@ -92,7 +92,7 @@ function Person({ history, ...props }) {
           </div>
         )}
 
-        {details.place_of_birth != "" && (
+        {details.place_of_birth && (
           <div className="info-item">
             <h3>Local de nascimento (em inglês)</h3>
             <p>{details.place_of_birth}</p>
@@ -154,7 +154,7 @@ function Person({ history, ...props }) {
                   {details.name}
                 </h1>
 
-                {details.biography != "" && (
+                {details.biography && (
                   <div className="info-item">
                     <h3>Biografia</h3>
                     <p className="biography-text">{details.biography}</p>

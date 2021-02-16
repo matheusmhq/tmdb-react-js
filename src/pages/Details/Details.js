@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Col } from "react-bootstrap";
 import moment from "moment";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -25,7 +25,6 @@ import {
   GetColorRating,
 } from "../../functions/utils";
 import placeholder from "../../assets/img/placeholder.jpg";
-import Colors from "../../styles/Colors";
 
 import "./styles.css";
 
@@ -111,14 +110,14 @@ function Details({ history, ...props }) {
   function RenderInfoMovie() {
     return (
       <>
-        {details.original_title != "" && (
+        {details.original_title && (
           <div className="info-item">
             <h3>Título original</h3>
             <p>{details.original_title}</p>
           </div>
         )}
 
-        {details.status != "" && (
+        {details.status && (
           <div className="info-item">
             <h3>Situação</h3>
             <p>{StatusMovieToBr(details.status)}</p>
@@ -160,7 +159,7 @@ function Details({ history, ...props }) {
   function RenderInfoTv() {
     return (
       <>
-        {details.status != "" && (
+        {details.status && (
           <div className="info-item">
             <h3>Situação</h3>
             <p>{StatusTvToBr(details.status)}</p>
@@ -178,7 +177,7 @@ function Details({ history, ...props }) {
           </div>
         )}
 
-        {details.type != "" && (
+        {details.type && (
           <div className="info-item">
             <h3>Tipo</h3>
             <p>{TypeTvToBr(details.type)}</p>
@@ -296,7 +295,7 @@ function Details({ history, ...props }) {
                         ConvertRuntime(details.episode_run_time[0])}
                     </p>
                   </div>
-                  {trailerId != "" && (
+                  {trailerId && (
                     <button
                       onClick={() => setShowTrailer(true)}
                       className="mt-4 w-100 d-flex align-items-center justify-content-center  justify-content-md-start btn-trailer"
@@ -306,14 +305,12 @@ function Details({ history, ...props }) {
                     </button>
                   )}
 
-                  <div className="mt-4">
-                    <h2>Sinopse</h2>
-                    <p>
-                      {details.overview != ""
-                        ? details.overview
-                        : "Indisponível"}
-                    </p>
-                  </div>
+                  {details.overview && (
+                    <div className="mt-4">
+                      <h2>Sinopse</h2>
+                      <p>{details.overview}</p>
+                    </div>
+                  )}
                 </div>
               </Col>
             </div>
