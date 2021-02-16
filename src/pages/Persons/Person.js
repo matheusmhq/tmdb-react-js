@@ -178,7 +178,7 @@ function Person({ history, ...props }) {
                     />
                   </div>
                   <BtnMore
-                    qtd={details.combined_credits.cast.length}
+                    qty={details.combined_credits.cast.length}
                     handler_show={setShowMore}
                     show={showMore}
                   />

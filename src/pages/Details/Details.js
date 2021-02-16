@@ -338,7 +338,7 @@ function Details({ history, ...props }) {
                     />
                   </div>
                   <BtnMore
-                    qtd={details.credits.cast.length}
+                    qty={details.credits.cast.length}
                     handler_show={setShowMore}
                     show={showMore}
                   />

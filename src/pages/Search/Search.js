@@ -74,7 +74,7 @@ function Search({ history, ...props }) {
         />
 
         <div className="mt-5 d-flex flex-wrap">
-          {loading && <LoadingCard qtd={8} />}
+          {loading && <LoadingCard qty={8} />}
 
           {!loading && listMovie.length == 0 && (
             <div className="container-empty">
