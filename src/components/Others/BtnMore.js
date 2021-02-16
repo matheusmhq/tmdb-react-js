@@ -1,10 +1,10 @@
 import React from "react";
 import "./styles.css";
 
-const BtnMore = ({ handler_show, show, qtd }) => {
+const BtnMore = ({ handler_show, show, qty }) => {
   return (
     <div className="text-center">
-      {qtd > 6 && (
+      {qty > 8 && (
         <button
           className="btn-show-cast btn-lg"
           onClick={() => handler_show(!show)}
