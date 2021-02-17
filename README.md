@@ -14,7 +14,7 @@ Um React app totalmente responsivo construído com [React](https://pt-br.reactjs
 
 ![Tmdb React js](src/assets/img/page-movies.jpg?raw=true)
 
-# Live
+# Demo
 
 [TMDB ReactJs - Live ◀️](https://tmdb-movies.netlify.app/)
 
