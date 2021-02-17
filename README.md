@@ -75,6 +75,6 @@ As principais bibliotecas usadas nesse projeto:
 
 - Agora é só rodar **yarn start** ou **npm start**
 
-- A aplicação irá abrir no seguinte endereço `http://localhost:3000/`
+- A aplicação irá abrir no seguinte endereço `http://localhost:3000`
 
 - Bons estudos pra você! 😀😀😀
