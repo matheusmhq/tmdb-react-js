@@ -1,5 +1,4 @@
 import axios from "axios";
-import { RemoveAspas } from "../functions/utils";
 
 const api = axios.create({
   baseURL: "https://api.themoviedb.org/3",
