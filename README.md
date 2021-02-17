@@ -22,7 +22,7 @@ Um React app totalmente responsivo construído com [React](https://pt-br.reactjs
 
 As principais bibliotecas usadas nesse projeto:
 
-| Bibliotecas             | Descrição   |
+| Biblioteca             | Descrição   |
 | :-------------:|--------------|
 | [React](http://facebook.github.io/react/index.html) | Uma biblioteca JavaScript para criar interfaces de usuário. |
 | [Bootstrap](https://react-bootstrap.github.io/) | A biblioteca de front-end mais popular reconstruída para React. |
