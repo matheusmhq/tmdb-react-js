@@ -1,5 +1,6 @@
-import React from "react";
-import { Col, Card, CardGroup } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Col, Card } from "react-bootstrap";
+import { useLocation } from "react-router-dom";
 
 import placeholder from "../../assets/img/placeholder.jpg";
 import cast_placeholder from "../../assets/img/cast_placeholder.jpg";
@@ -11,6 +12,9 @@ import { HexToRgbA, GetColorRating } from "../../functions/utils";
 
 function MainCard({ ...props }) {
   const { list_movie, history, type } = props;
+  const location = useLocation();
+
+  const [target, setTarget] = useState("");
 
   function RenderDate(item) {
     var date = "";
@@ -52,13 +56,29 @@ function MainCard({ ...props }) {
     return url;
   }
 
+  useEffect(() => {
+    var page = location.pathname;
+    if (
+      page.includes("movies") ||
+      page.includes("tvs") ||
+      page.includes("persons") ||
+      page == "/"
+    ) {
+      setTarget("_blank");
+    }
+  }, []);
+
   return (
     <>
       {list_movie.map((item) => {
         return (
           <Col xs={6} sm={4} lg={3} key={item.id} className="mb-3">
             <Card className=" h-100">
-              <a href={GetUrl(item)} className="position-relative">
+              <a
+                target={target}
+                href={GetUrl(item)}
+                className="position-relative"
+              >
                 <Card.Img
                   title={item.title}
                   alt={item.title}
@@ -89,6 +109,7 @@ function MainCard({ ...props }) {
               </a>
               <Card.Body>
                 <a
+                  target={target}
                   href={`/details/${item.title != undefined ? "movie" : "tv"}/${
                     item.id
                   }`}
