@@ -13,17 +13,15 @@ function Routes() {
   return (
     <div className="app">
       <BrowserRouter>
-        <main>
-          <Switch>
-            <Route exact path="/" component={Discover} />
-            <Route exact path="/search/:query?" component={Search} />
-            <Route exact path="/details/:type?/:id?" component={Details} />
-            <Route exact path="/Movies" component={Movies} />
-            <Route exact path="/Tvs" component={Tvs} />
-            <Route exact path="/Persons" component={Persons} />
-            <Route exact path="/Person/:id" component={Person} />
-          </Switch>
-        </main>
+        <Switch>
+          <Route exact path="/" component={Discover} />
+          <Route exact path="/search/:query?" component={Search} />
+          <Route exact path="/details/:type?/:id?" component={Details} />
+          <Route exact path="/Movies" component={Movies} />
+          <Route exact path="/Tvs" component={Tvs} />
+          <Route exact path="/Persons" component={Persons} />
+          <Route exact path="/Person/:id" component={Person} />
+        </Switch>
       </BrowserRouter>
     </div>
   );
