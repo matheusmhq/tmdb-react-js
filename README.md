@@ -35,7 +35,7 @@ As principais bibliotecas usadas nesse projeto:
 
 # Funcionalidades
 
-- [Descubra (/discover)](https://tmdb-movies.netlify.app/) - Lista **_filmes_** ou **_séries_** baseado nos filtro selecionados (Ano e Ordernar por).
+- [Descubra (/discover)](https://tmdb-movies.netlify.app/) - Lista **_filmes_** ou **_séries_** baseado nos filtros selecionados (Ano e Ordernar por).
 
 - [Filmes/Séries (/movie ou /tvs)](https://tmdb-movies.netlify.app/movies) - Lista **_filmes_** ou **_séries_** baseado no tipo selecionado (Populares ou Mais votados).
 
