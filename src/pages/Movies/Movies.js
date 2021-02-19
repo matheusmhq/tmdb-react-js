@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Col, Container, Form } from "react-bootstrap";
-import Select from "react-select";
+import { Container } from "react-bootstrap";
 
 import MainNavBar from "../../components/MainNavBar/MainNavBar";
 import LoadingCard from "../../components/Loading/LoadingCard";
 import MainPagination from "../../components/MainPagination/MainPagination";
-import { GetListYears, GetListSort } from "../../functions/utils";
 import MainCard from "../../components/MainCard/MainCard";
 import Footer from "../../components/Footer/Footer";
 import api from "../../services/api";
