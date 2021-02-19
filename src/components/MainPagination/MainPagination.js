@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Row, Pagination } from "react-bootstrap";
+import { Col, Pagination } from "react-bootstrap";
 
 import "./styles.css";
 
