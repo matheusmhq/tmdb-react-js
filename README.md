@@ -29,9 +29,6 @@ As principais bibliotecas usadas nesse projeto:
 | [Router Dom](https://reactrouter.com/) | O React Router Dom é uma lib completa para controle de rotas. |
 | [Axios](https://github.com/axios/axios) | Cliente HTTP baseado em promessa para o navegador e node.js. |
 | [Moment](https://momentjs.com/) | Uma biblioteca de datas JavaScript para analisar, validar, manipular e formatar datas. |
-| [Loading Skeleton](https://www.npmjs.com/package/react-loading-skeleton) | Crie lindos esqueletos de carregamento animados que se adaptam automaticamente ao seu aplicativo. |
-| [Select](https://react-select.com) | Um select flexível e bonito para ReactJS com multiselect, autocomplete, assíncrono e suporte criável. |
-| [Circular Progressbar](https://momentjs.com/) | Um componente da barra de progresso circular, desenvolvido com SVG e amplamente personalizável. |
 
 # Funcionalidades
 
