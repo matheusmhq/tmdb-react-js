@@ -24,32 +24,32 @@
 .movie-text {
   color: var(--light_blue);
   cursor: pointer;
-  font-family: "Reggae One", cursive;
+  font-family: "OldSansBlack";
 }
 
 .movie-text:hover {
   color: var(--light_blue);
-  font-family: "Reggae One", cursive;
+  font-family: "OldSansBlack";
 }
 
 .serie-text {
   color: var(--light_green);
   cursor: pointer;
-  font-family: "Reggae One", cursive;
+  font-family: "OldSansBlack";
 }
 
 .serie-text:hover {
   color: var(--light_green);
-  font-family: "Reggae One", cursive;
+  font-family: "OldSansBlack";
 }
 
 .person-text {
   color: var(--brand_yellow);
+  font-family: "OldSansBlack";
   cursor: pointer;
-  font-family: "Reggae One", cursive;
 }
 
 .person-text:hover {
   color: var(--brand_yellow);
-  font-family: "Reggae One", cursive;
+  font-family: "OldSansBlack";
 }

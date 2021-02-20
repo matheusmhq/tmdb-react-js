@@ -320,7 +320,7 @@ function Details({ history, ...props }) {
             <div className="d-flex flex-wrap">
               <Col xs={12} md={8} lg={8} className="">
                 <div className="panel">
-                  <h3 className="mb-4 text-center text-md-left">
+                  <h3 className="mb-4 font-weight-bold text-center text-md-left">
                     Elenco principal
                   </h3>
                   {details.credits.cast.length == 0 && (
@@ -343,7 +343,7 @@ function Details({ history, ...props }) {
               </Col>
 
               <Col xs={12} md={4} lg={4}>
-                <div className="info text-center text-md-left">
+                <div className="info text-center  text-md-left">
                   <Social
                     social={details.external_ids}
                     homepage={details.homepage}
@@ -356,7 +356,7 @@ function Details({ history, ...props }) {
 
             {details.recommendations.results.length > 0 && (
               <div className="d-flex flex-wrap mt-4">
-                <h3 className="w-100 mb-4 text-center text-md-left">
+                <h3 className="w-100 mb-4 font-weight-bold text-center text-md-left">
                   Recomendações
                 </h3>
                 <MainCard

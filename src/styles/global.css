@@ -1,9 +1,11 @@
 @font-face {
-  src: url("https://fonts.googleapis.com/css2?family=Newsreader:wght@200&family=Oswald:wght@500&display=swap");
+  font-family: "OldSansBlack";
+  src: url("../assets/fonts/OldSansBlack.ttf");
 }
 
 @font-face {
-  src: url("https://fonts.googleapis.com/css2?family=Newsreader:wght@200&family=Reggae+One&display=swap");
+  font-family: "Gotham-Medium";
+  src: url("../assets/fonts/Gotham-Medium.otf");
 }
 
 /* Colors */
@@ -40,7 +42,7 @@ body {
 *:focus,
 *:hover {
   outline: none !important;
-  font-family: "Oswald", sans-serif;
+  font-family: "Gotham-Medium";
 }
 
 button:focus {
@@ -60,6 +62,7 @@ button:focus {
   color: var(--darkest_gray);
   margin-bottom: 2px;
   font-weight: bold;
+  font-size: 16px;
 }
 
 .card-title:hover {
@@ -68,6 +71,16 @@ button:focus {
 
 .card-text {
   color: var(--dark_gray);
+  font-size: 14px;
+}
+
+@media screen and (max-width: 500px) {
+  .card-title {
+    font-size: 14px;
+  }
+  .card-text {
+    font-size: 12px;
+  }
 }
 
 .limit-text {
@@ -80,15 +93,6 @@ button:focus {
 
 .underline {
   text-decoration: underline;
-}
-
-@media screen and (max-width: 500px) {
-  .card-title {
-    font-size: 14px;
-  }
-  .card-text {
-    font-size: 14px;
-  }
 }
 
 .container-rating {
