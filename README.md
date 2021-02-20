@@ -22,7 +22,7 @@
   <a href="#demo">Demo</a> •
   <a href="#bibliotecas">Bibliotecas</a> •
   <a href="#funcionalidades">Funcionalidades</a> •
-  <a href="#iniciando">Iniciando</a> •  
+  <a href="#iniciando">Iniciando</a>   
 </p>
 
 <p align="center">
