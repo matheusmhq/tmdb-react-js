@@ -17,7 +17,7 @@
 Um React app totalmente responsivo construído com [React](https://pt-br.reactjs.org/) consumindo a api pública do [TMDB](https://www.themoviedb.org/).
 
 <p align="center">
-    <img style="border-radius: 5px" src="assets/demo.gif" alt="Tmdb React js">
+    <img style="border-radius: 5px" src="src/assets/img/demo.gif" alt="Tmdb React js">
 </p>
 
 # Demo
