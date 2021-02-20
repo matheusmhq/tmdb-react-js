@@ -4,9 +4,7 @@ import { Col } from "react-bootstrap";
 
 import Colors from "../../styles/Colors";
 
-function LoadingCard({ ...props }) {
-  const { qty } = props;
-
+const LoadingCard = ({ qty }) => {
   function RenderSkeleton() {
     var list = [];
 
@@ -26,6 +24,6 @@ function LoadingCard({ ...props }) {
   }
 
   return <>{RenderSkeleton()}</>;
-}
+};
 
 export default LoadingCard;

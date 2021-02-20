@@ -5,7 +5,7 @@ import { Container, Col } from "react-bootstrap";
 import Colors from "../../styles/Colors";
 import "./styles.css";
 
-function LoadingDetails() {
+const LoadingPerson = () => {
   return (
     <Container>
       <SkeletonTheme
@@ -23,6 +23,6 @@ function LoadingDetails() {
       </SkeletonTheme>
     </Container>
   );
-}
+};
 
-export default LoadingDetails;
+export default LoadingPerson;
