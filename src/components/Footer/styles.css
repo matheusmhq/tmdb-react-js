@@ -31,6 +31,7 @@ footer .view-code {
   margin-top: 10px;
   display: block;
   transition: 1s all;
+  font-size: 12px;
 }
 
 footer .view-code:hover {
