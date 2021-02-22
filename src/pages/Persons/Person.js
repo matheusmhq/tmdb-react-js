@@ -117,9 +117,9 @@ function Person({ history, ...props }) {
     <div>
       <MainNavBar history={history} />
 
-      {loading && <LoadingPerson />}
-
-      {!loading && (
+      {loading ? (
+        <LoadingPerson />
+      ) : (
         <Container className="mt-4 p-0" fluid>
           <div className="d-flex flex-wrap">
             <Col xs={12} md={4} lg={4}>
@@ -188,6 +188,7 @@ function Person({ history, ...props }) {
           </div>
         </Container>
       )}
+
       <Footer />
     </div>
   );
