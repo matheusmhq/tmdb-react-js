@@ -14,7 +14,7 @@ function Routes() {
     <div className="app">
       <BrowserRouter>
         <Switch>
-          <Route exact path="/:page?/:year?/:sort?" component={Discover} />
+          <Route exact path="/" component={Discover} />
           <Route exact path="/search/:query?" component={Search} />
           <Route exact path="/details/:type?/:id?" component={Details} />
           <Route exact path="/movies" component={Movies} />
