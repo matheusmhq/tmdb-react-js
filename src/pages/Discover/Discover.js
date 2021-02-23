@@ -14,7 +14,12 @@ import moment from "moment";
 import "moment/locale/pt-br";
 moment.locale("pt-br");
 
-function Discover({ history }) {
+function Discover({ history, ...props }) {
+  const { match } = props;
+
+  console.log("match");
+  console.log(match);
+
   const listScroll = useRef(null);
   const scrollToRefObject = (ref) => window.scrollTo(0, ref.current?.offsetTop);
 

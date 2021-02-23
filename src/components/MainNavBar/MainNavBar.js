@@ -28,7 +28,7 @@ function MainNavBar({ ...props }) {
   }
 
   function VerifyActualPage(page) {
-    //Veriry discover
+    //Verify discover
     if (page == "/") {
       var locationSplit = location.pathname.split("/");
       if (locationSplit[1] == "") return "active-page";
