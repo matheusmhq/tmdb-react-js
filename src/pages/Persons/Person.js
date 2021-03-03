@@ -155,7 +155,7 @@ function Person({ history, ...props }) {
                 </h1>
 
                 {details.biography && (
-                  <div className="info-item">
+                  <div className="info-item text-center text-md-left">
                     <h3>Biografia</h3>
                     <p className="biography-text">{details.biography}</p>
                   </div>
