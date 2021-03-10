@@ -221,7 +221,7 @@ function Details({ history, ...props }) {
         </div>
       )}
 
-      {!loading && details.id != undefined && (
+      {!loading && details.id && (
         <>
           <div
             className="image-bg-top d-flex flex-wrap justify-content-center"
@@ -243,12 +243,8 @@ function Details({ history, ...props }) {
               <Col xs={12} md={4}>
                 <div className="details-left text-center">
                   <img
-                    title={
-                      details.title != undefined ? details.title : details.name
-                    }
-                    alt={
-                      details.title != undefined ? details.title : details.name
-                    }
+                    title={details.title ? details.title : details.name}
+                    alt={details.title ? details.title : details.name}
                     className="img-fluid"
                     src={
                       details.poster_path != null
@@ -280,13 +276,13 @@ function Details({ history, ...props }) {
               <Col xs={12} md={8}>
                 <div className="details-right text-center text-md-left">
                   <h1 className="details-title my-4 my-md-0">
-                    {details.title != undefined ? details.title : details.name}{" "}
+                    {details.title ? details.title : details.name}
                     <span>{RenderYear()}</span>
                   </h1>
                   <div className="d-flex flex-column flex-md-row">
                     <p className="details-date">{RenderDate()}</p>
                     <div className=" d-flex justify-content-center align-items-center container-gender">
-                      <p>{GetGenres(details.genres)}</p>
+                      <p>{GetGenres(details.genres?.slice(0, 3))}</p>
                     </div>
                     <p className="details-runtime">
                       {type == "movie" && ConvertRuntime(details.runtime)}
@@ -304,7 +300,6 @@ function Details({ history, ...props }) {
                       <p className="ml-2">Reproduzir trailer</p>
                     </button>
                   )}
-
                   {details.overview && (
                     <div className="mt-4">
                       <h2>Sinopse</h2>
