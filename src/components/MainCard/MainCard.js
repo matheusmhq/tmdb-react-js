@@ -91,18 +91,20 @@ function MainCard({ ...props }) {
                       strokeWidth={7}
                       styles={buildStyles({
                         textSize: "28px",
-                        pathColor: GetColorRating(item.vote_average),
+                        pathColor: GetColorRating(
+                          Math.floor(item.vote_average)
+                        ),
                         textColor: "white",
                         trailColor: HexToRgbA(
-                          GetColorRating(item.vote_average),
+                          GetColorRating(Math.floor(item.vote_average)),
                           0.3
                         ),
                         backgroundColor: "black",
                       })}
                       background={true}
                       backgroundPadding={true}
-                      value={item.vote_average * 10}
-                      text={`${item.vote_average * 10}%`}
+                      value={Math.floor(item.vote_average) * 10}
+                      text={`${Math.floor(item.vote_average) * 10}%`}
                     />
                   </div>
                 )}
