@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form, Navbar, Nav, FormControl } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
+import { useLocation, NavLink } from "react-router-dom";
 
 import "./styles.css";
 import logo from "../../assets/img/logo.png";
@@ -10,9 +10,7 @@ function MainNavBar({ ...props }) {
   const location = useLocation();
 
   const [word, setWord] = useState(query ? query : "");
-  const [isPageSearch, setIsPageSearch] = useState(
-    location.pathname.includes("search")
-  );
+  const isPageSearch = location.pathname.includes("search");
 
   function GoToSearch(word) {
     if (word == "") return false;
@@ -25,19 +23,6 @@ function MainNavBar({ ...props }) {
     }
 
     history.push({ pathname: `/search/${word}` });
-  }
-
-  function VerifyActualPage(page) {
-    //Verify discover
-    if (page == "/") {
-      var locationSplit = location.pathname.split("/");
-      if (locationSplit[1] == "") return "active-page";
-      else return "disabled-page";
-    }
-
-    //Verify others page
-    if (location.pathname.includes(page)) return "active-page";
-    else return "disabled-page";
   }
 
   return (
@@ -53,24 +38,35 @@ function MainNavBar({ ...props }) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link className={`${VerifyActualPage("/")}`} href="/">
+            <NavLink
+              activeClassName="active-page"
+              className={`nav-link`}
+              exact
+              to="/"
+            >
               Descubra
-            </Nav.Link>
-            <Nav.Link
-              className={`${VerifyActualPage("movies")}`}
-              href="/movies"
+            </NavLink>
+            <NavLink
+              activeClassName="active-page"
+              className={`nav-link`}
+              to="/movies"
             >
               Filmes
-            </Nav.Link>
-            <Nav.Link className={`${VerifyActualPage("tvs")}`} href="/tvs">
+            </NavLink>
+            <NavLink
+              activeClassName="active-page"
+              className={`nav-link`}
+              to="/tvs"
+            >
               Séries
-            </Nav.Link>
-            <Nav.Link
-              className={`${VerifyActualPage("persons")}`}
-              href="/persons"
+            </NavLink>
+            <NavLink
+              activeClassName="active-page"
+              className={`nav-link`}
+              to="/persons"
             >
               Pessoas
-            </Nav.Link>
+            </NavLink>
           </Nav>
           <Form
             inline

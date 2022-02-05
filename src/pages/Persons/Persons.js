@@ -36,9 +36,6 @@ function Persons({ history, ...props }) {
         })
         .then((response) => {
           if (response.status == 200) {
-            console.log("LoadPersons success");
-            console.log(response.data);
-
             setListMovie(response.data.results);
             setLastPage(response.data.total_pages);
             setTotalResults(response.data.total_results);
@@ -80,13 +77,7 @@ function Persons({ history, ...props }) {
               </p>
             </div>
           )}
-          {!loading && (
-            <MainCard
-              type={"person"}
-              list_movie={listMovie}
-              history={history}
-            />
-          )}
+          {!loading && <MainCard type={"person"} list_movie={listMovie} />}
         </div>
 
         {listMovie.length > 0 && (

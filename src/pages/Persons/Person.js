@@ -39,8 +39,6 @@ function Person({ history, ...props }) {
         })
         .then((response) => {
           if (response.status == 200) {
-            console.log("LoadDetails success");
-            console.log(response.data);
             setDetails(response.data);
           }
         })
@@ -169,7 +167,6 @@ function Person({ history, ...props }) {
                   </h3>
                   <div className="d-flex flex-wrap mt-4">
                     <MainCard
-                      history={history}
                       list_movie={details.combined_credits.cast.slice(
                         0,
                         showMore ? 999 : 8

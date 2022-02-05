@@ -40,9 +40,6 @@ function Search({ history, ...props }) {
         })
         .then((response) => {
           if (response.status == 200) {
-            console.log("LoadMovies success");
-            console.log(response.data);
-
             setListMovie(response.data.results);
             setLastPage(response.data.total_pages);
             setTotalResults(response.data.total_results);
@@ -85,9 +82,7 @@ function Search({ history, ...props }) {
             </div>
           )}
 
-          {!loading && (
-            <MainCard type={type} list_movie={listMovie} history={history} />
-          )}
+          {!loading && <MainCard type={type} list_movie={listMovie} />}
         </div>
 
         {listMovie.length > 0 && (

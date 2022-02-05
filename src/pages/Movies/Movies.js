@@ -71,9 +71,10 @@ function Movies({ history }) {
         />
 
         <div className="mt-5 d-flex flex-wrap">
-          {loading && <LoadingCard qty={8} />}
-          {!loading && (
-            <MainCard type={type} list_movie={listMovie} history={history} />
+          {loading ? (
+            <LoadingCard qty={8} />
+          ) : (
+            <MainCard type={type} list_movie={listMovie} />
           )}
         </div>
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Col, Card } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 import placeholder from "../../assets/img/placeholder.jpg";
 import cast_placeholder from "../../assets/img/cast_placeholder.jpg";
@@ -11,9 +11,8 @@ import "react-circular-progressbar/dist/styles.css";
 import { HexToRgbA, GetColorRating } from "../../functions/utils";
 
 function MainCard({ ...props }) {
-  const { list_movie, history, type } = props;
+  const { list_movie, type } = props;
   const location = useLocation();
-
   const [target, setTarget] = useState("");
 
   function RenderDate(item) {
@@ -50,9 +49,7 @@ function MainCard({ ...props }) {
 
   function GetUrl(item) {
     var url = `/details/${item.title != undefined ? "movie" : "tv"}/${item.id}`;
-    if (type == "person") {
-      url = `/person/${item.id}`;
-    }
+    if (type == "person") url = `/person/${item.id}`;
     return url;
   }
 
@@ -73,10 +70,10 @@ function MainCard({ ...props }) {
       {list_movie.map((item) => {
         return (
           <Col xs={6} sm={4} lg={3} key={item.id} className="mb-3">
-            <Card className=" h-100">
-              <a
+            <Card className="h-100">
+              <Link
                 target={target}
-                href={GetUrl(item)}
+                to={GetUrl(item)}
                 className="position-relative"
               >
                 <Card.Img
@@ -108,11 +105,11 @@ function MainCard({ ...props }) {
                     />
                   </div>
                 )}
-              </a>
+              </Link>
               <Card.Body>
-                <a
+                <Link
                   target={target}
-                  href={`/details/${item.title != undefined ? "movie" : "tv"}/${
+                  to={`/details/${item.title != undefined ? "movie" : "tv"}/${
                     item.id
                   }`}
                   title={item.title}
@@ -121,7 +118,7 @@ function MainCard({ ...props }) {
                   <Card.Title>
                     {item.title != undefined ? item.title : item.name}
                   </Card.Title>
-                </a>
+                </Link>
                 {type != "person" && (
                   <Card.Text>
                     {RenderDate(item) != "Data inválida"

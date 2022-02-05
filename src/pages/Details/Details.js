@@ -25,7 +25,6 @@ import {
   GetColorRating,
 } from "../../functions/utils";
 import placeholder from "../../assets/img/placeholder.jpg";
-
 import "./styles.css";
 
 function Details({ history, ...props }) {
@@ -56,8 +55,6 @@ function Details({ history, ...props }) {
         })
         .then((response) => {
           if (response.status == 200) {
-            console.log("LoadDetails success");
-            console.log(response.data);
             setDetails(response.data);
 
             if (response.data.videos?.results.length > 0) {
@@ -355,7 +352,6 @@ function Details({ history, ...props }) {
                   Recomendações
                 </h3>
                 <MainCard
-                  history={history}
                   list_movie={details.recommendations.results.slice(0, 8)}
                   type={type}
                 />

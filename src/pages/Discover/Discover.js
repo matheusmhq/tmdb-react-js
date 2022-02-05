@@ -14,7 +14,7 @@ import moment from "moment";
 import "moment/locale/pt-br";
 moment.locale("pt-br");
 
-function Discover({ history, ...props }) {
+function Discover({ history }) {
   const listScroll = useRef(null);
   const scrollToRefObject = (ref) => window.scrollTo(0, ref.current?.offsetTop);
 
@@ -57,9 +57,6 @@ function Discover({ history, ...props }) {
         })
         .then((response) => {
           if (response.status == 200) {
-            console.log("LoadMovies success");
-            console.log(response.data);
-
             setListMovie(response.data.results);
             setLastPage(response.data.total_pages);
             setTotalResults(response.data.total_results);
@@ -136,9 +133,7 @@ function Discover({ history, ...props }) {
             </div>
           )}
 
-          {!loading && (
-            <MainCard type={type} list_movie={listMovie} history={history} />
-          )}
+          {!loading && <MainCard type={type} list_movie={listMovie} />}
         </div>
 
         {listMovie.length > 0 && (

@@ -37,9 +37,6 @@ function Tvs({ history }) {
         })
         .then((response) => {
           if (response.status == 200) {
-            console.log("LoadTvs success");
-            console.log(response.data);
-
             setListMovie(response.data.results);
             setLastPage(response.data.total_pages);
             setTotalResults(response.data.total_results);
@@ -74,7 +71,7 @@ function Tvs({ history }) {
           {loading ? (
             <LoadingCard qty={8} />
           ) : (
-            <MainCard type={"tv"} list_movie={listMovie} history={history} />
+            <MainCard type={"tv"} list_movie={listMovie} />
           )}
         </div>
 
