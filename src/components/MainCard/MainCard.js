@@ -109,9 +109,7 @@ function MainCard({ ...props }) {
               <Card.Body>
                 <Link
                   target={target}
-                  to={`/details/${item.title != undefined ? "movie" : "tv"}/${
-                    item.id
-                  }`}
+                  to={GetUrl(item)}
                   title={item.title}
                   alt={item.title}
                 >
