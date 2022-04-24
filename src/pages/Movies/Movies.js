@@ -37,9 +37,6 @@ function Movies({ history }) {
         })
         .then((response) => {
           if (response.status == 200) {
-            console.log("LoadMovies success");
-            console.log(response.data);
-
             setListMovie(response.data.results);
             setLastPage(response.data.total_pages);
             setTotalResults(response.data.total_results);

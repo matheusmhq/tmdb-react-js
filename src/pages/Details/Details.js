@@ -29,10 +29,9 @@ import "./styles.css";
 
 function Details({ history, ...props }) {
   const { match } = props;
+  const { id, type } = match.params;
 
   const [loading, setLoading] = useState(true);
-  const [id, setId] = useState(match.params.id);
-  const [type, setType] = useState(match.params.type);
   const [details, setDetails] = useState({});
   const [showTrailer, setShowTrailer] = useState(false);
   const [trailerId, setTrailerId] = useState("");
@@ -65,11 +64,14 @@ function Details({ history, ...props }) {
         .catch((error) => {
           console.log("LoadDetails error " + error);
         })
-        .finally(() => setLoading(false));
+        .finally(() => {
+          window.scrollTo(0, 0);
+          setLoading(false);
+        });
     }
 
     LoadDetails();
-  }, []);
+  }, [id]);
 
   function GetGenres(genres) {
     if (genres == null || genres == undefined) return false;
